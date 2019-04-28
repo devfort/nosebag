@@ -1,0 +1,57 @@
+{
+    "schema": "http://horse.bad/#ingredient",
+    "ingredients": [
+        {
+            "name": "sweet cured, streaky bacon",
+            "group": "butcher",
+            "attributes": [
+                "meat"
+            ]
+        },
+        {
+            "name": "large potato",
+            "group": "vegetable",
+            "attributes": [
+                "gluten free"
+            ]
+        },
+        {
+            "name": "carrot",
+            "group": "vegetable"
+        },
+        {
+            "name": "green cabbage",
+            "group": "vegetable"
+        },
+        {
+            "name": "purple sprouting broccoli",
+            "group": "vegetable"
+        },
+        {
+            "name": "shallot",
+            "group": "vegetable"
+        },
+        {
+            "name": "butter",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
+            "name": "black pepper",
+            "group": "spice"
+        }
+    ],
+    "groups": [
+        {
+            "name": "meat"
+        },
+        {
+            "name": "vegetable"
+        },
+        {
+            "name": "spice"
+        }
+    ]
+}

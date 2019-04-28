@@ -1,0 +1,85 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Bacon hash",
+    "attributes": [
+        "gluten free",
+        "nut free"
+    ],
+    "ingredients": [
+        {
+            "name": "sweet cured, streaky bacon",
+            "quantity": {
+                "amount": 200,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "large potato",
+            "quantity": 2,
+            "prep": "skin on and cut into small chunks"
+        },
+        {
+            "name": "carrot",
+            "quantity": 1,
+            "prep": "peeled and sliced"
+        },
+        {
+            "name": "green cabbage",
+            "quantity": {
+                "amount": 100,
+                "unit": "g"
+            },
+            "prep": "washed and chopped into large pieces"
+        },
+        {
+            "name": "purple sprouting broccoli",
+            "quantity": {
+                "amount": 50,
+                "unit": "g"
+            },
+            "prep": "well trimmed"
+        },
+        {
+            "name": "shallot",
+            "quantity": 1,
+            "prep": "trimmed"
+        },
+        {
+            "name": "butter",
+            "quantity": {
+                "amount": 12,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "black pepper",
+            "quantity": {
+                "amount": 1,
+                "unit": "pinch"
+            }
+        }
+    ],
+    "steps": [
+        {
+            "task": "Place the potatoes and carrots in a large pan of boiling water. Cook for 10 minutes."
+        },
+        {
+            "task": "Add the greens and continue to cook for 5 minutes."
+        },
+        {
+            "task": "Preheat the grill on high."
+        },
+        {
+            "task": "Place the bacon rashers and shallot in a large frying pan and cook until the bacon becomes crispy.",
+        },
+        {
+            "task": "Drain the vegetables and either mix them together or mash to combine well."
+        },
+        {
+            "task": "Combine potato mixture, bacon and shallot. You can use the frying pan, if that will go under your grill. Roughly spread out. Dot with butter and season. Place under the hot grill and cook until browned."
+        }
+        {
+            "task": "Either serve from the pan or turn out onto a plate and cut into wedges. Serve with ketchup, chutney, or pesto."
+        }
+    ]
+}
