@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "jasmine": "*"
+  },
+  "scripts": {
+    "test": "jasmine spec/**/*_spec.js"
+  }
+}
