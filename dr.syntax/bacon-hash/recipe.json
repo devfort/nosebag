@@ -20,7 +20,7 @@
         },
         {
             "name": "carrot",
-            "quantity": 1,
+            "quantity": 2,
             "prep": "peeled and sliced"
         },
         {
@@ -42,7 +42,7 @@
         {
             "name": "shallot",
             "quantity": 1,
-            "prep": "trimmed"
+            "prep": "chopped"
         },
         {
             "name": "butter",
