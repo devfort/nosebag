@@ -14,7 +14,14 @@ describe('filesystem store', () => {
   describe('list_recipes', () => {
     it('returns a list of recipe IDs', async () => {
       let recipes = await store.list_recipes();
-      expect(recipes).toEqual(['bacon-hash', 'chicken-chorizo-gumbo', 'rice-pudding']);
+      expect(recipes).toEqual([
+          'bacon-hash',
+          'cauliflower-fritter-lime-sauce',
+          'chicken-chorizo-gumbo',
+          'fish-chorizo-stew',
+          'lemon-curd-tart',
+          'rice-pudding'
+        ]);
     })
   })
 })
