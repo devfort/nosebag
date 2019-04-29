@@ -39,6 +39,13 @@
             ]
         },
         {
+            "name": "milk",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
             "name": "black pepper",
             "group": "spice"
         },
