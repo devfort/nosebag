@@ -41,6 +41,46 @@
         {
             "name": "black pepper",
             "group": "spice"
+        },
+        {
+            "name": "onion",
+            "group": "vegetable"
+        },
+        {
+            "name": "celery stick",
+            "group": "vegetable"
+        },
+        {
+            "name": "green pepper",
+            "group": "vegetable"
+        },
+        {
+            "name": "chicken breast",
+            "group": "meat"
+        },
+        {
+            "name": "chorizo",
+            "group": "meat"
+        },
+        {
+            "name": "chopped tomato",
+            "group": "tinned vegetable"
+        },
+        {
+            "name": "chicken stock",
+            "group": "stock"
+        },
+        {
+            "name": "cajun spice",
+            "group": "spice"
+        },
+        {
+            "name": "okra",
+            "group": "vegetable"
+        },
+        {
+            "name": "white long grain rice",
+            "group": "rice"
         }
     ],
     "groups": [
@@ -52,6 +92,15 @@
         },
         {
             "name": "spice"
+        },
+        {
+            "name": "tinned vegetable"
+        },
+        {
+            "name": "stock"
+        },
+        {
+            "name": "rice"
         }
     ]
 }
