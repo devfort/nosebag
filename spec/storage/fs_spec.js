@@ -28,6 +28,12 @@ describe('filesystem store', () => {
           'sunday-lamb-roast',
         ]);
     })
+
+    it('can load all the enumerated recipes', async () => {
+      let recipes = await store.list_recipes();
+      for (let id of recipes)
+        await store.get_recipe(id)
+    })
   })
 
   describe('get_recipe', () => {
