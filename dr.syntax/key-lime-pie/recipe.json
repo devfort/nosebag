@@ -1,0 +1,62 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Key lime pie",
+    "attributes": [
+        "dessert"
+    ],
+    "ingredients": [
+        {
+            "name": "digestive biscuits",
+            "quantity": {
+                "amount": 400,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "butter",
+            "quantity": {
+                "amount": 250,
+                "unit": "g"
+            },
+            "prep": "melted"
+        },
+        {
+            "name": "double cream",
+            "quantity": {
+                "amount": 300,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "condensed milk",
+            "quantity": {
+                "amount": 397,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "limes",
+            "quantity": 5
+        }
+    ],
+    "steps": [
+        {
+            "task": "Blitz the biscuits in a food processor (or smash with a rolling pin in a sandwich bag)."
+        },
+        {
+            "task": "Melt the butter, and mix into the crushed biscuits. Press the mixture into a pie dish to form the base. Chill in the fridge for an hour."
+        },
+        {
+            "task": "Zest and juice the limes. Reserve a fifth of the zest, mix the rest into the juice."
+        },
+        {
+            "task": "In a bowl, whisk the condensed milk and cream together until well combined. Continue to whisk while adding the lime juice. The acid in the lime will make it thicken."
+        },
+        {
+            "task": "Pour the mixture onto the buttery biscuit base. Sprinke the remaining zest on top attractively."
+        },
+        {
+            "task": "Chill the pie in the fridge for at least an hour, and preferably overnight."
+        }
+    ]
+}

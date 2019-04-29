@@ -22,6 +22,7 @@ describe('filesystem store', () => {
           'cauliflower-fritter-lime-sauce',
           'chicken-chorizo-gumbo',
           'fish-chorizo-stew',
+          'key-lime-pie',
           'lemon-curd-tart',
           'rice-pudding',
           'sunday-lamb-roast',
