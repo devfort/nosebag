@@ -63,6 +63,7 @@ describe('filesystem store', () => {
 
     it('builds RecipeIngredient objects', () => {
       let item = recipe.ingredients[0];
+      expect(item.recipe).toEqual(recipe);
       expect(item.ingredient).toEqual(new Ingredient('white long grain rice'));
       expect(item.quantity).toEqual(new Quantity(100, 'g'))
     })
