@@ -40,3 +40,17 @@ Groups represent a phase of your shopping, and may be thought of as aisles of a 
 The recipe core object is serialised as JSON, and stored as `recipe.json` alongside additional media files for that recipe. (Media files are referenced using either a relative URL, meaning their leaf filename, or an absolute URL if the media files are stored elsewhere such as on Wikipedia.)
 
 Ingredients and groups are serialised as one JSON object, stored as `ontology.json`.
+
+## Doctor Syntax recommends that
+
+ * attributes that indicate absence of something (such as allergens) should be hyphenated; for instanec, "nut-free" or "dairy-free". This is purely to have a convention.
+
+ * units are abbreviated using the most common abbreviation, such as "ml", "g", or "tsp". Again, this is a useful convention.
+
+ * ingredients are specified as precisely as possible. "Sweet cured, streaky bacon" will likely not be a perfect replacement for "back bacon", and vice versa. By keeping the ingredients separate in your recipe book, tools can let you decide whether to buy the same thing across different recipes or not. If you just put "bacon" everywhere, tools may attempt to combine all ingredients across multiple recipes (such as for a shopping list) in a way that makes it hard for you to remember that you may actually want different types of bacon.
+
+ * you make each recipe step fairly small and self-contained. This generally makes it easier for people to understand what's going on, but also enables tools to suggest ways of scheduling the steps of multiple recipes you need to cook at once, such as for a dinner.
+
+ * group and ingredient names are singular and lower-cased.
+
+ * "large potato" as an ingredient can be more useful than "potato" with a quantity unit of "large"
