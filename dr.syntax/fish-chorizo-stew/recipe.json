@@ -20,7 +20,7 @@
                 "unit": "tsp"
             },
             "optional": true
-        },    
+        },
         {
             "name": "chorizo",
             "quantity": {
