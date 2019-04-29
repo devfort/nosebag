@@ -41,4 +41,44 @@ describe('tokenizer', () => {
       {'type': 'word', 'token': 'brûlée'}
     ])
   })
+
+  it('treats and specially', () => {
+    expect(tokenize('lamb and mince')).toEqual([
+      {'type': 'word', 'token': 'lamb'},
+      {'type': 'and', 'token': 'and'},
+      {'type': 'word', 'token': 'mince'}
+    ])
+
+    expect(tokenize('lamb AND mince')).toEqual([
+      {'type': 'word', 'token': 'lamb'},
+      {'type': 'and', 'token': 'AND'},
+      {'type': 'word', 'token': 'mince'}
+    ])
+  })
+
+  it('treats not/no specially', () => {
+    expect(tokenize('lamb not mince')).toEqual([
+      {'type': 'word', 'token': 'lamb'},
+      {'type': 'not', 'token': 'not'},
+      {'type': 'word', 'token': 'mince'}
+    ])
+
+    expect(tokenize('lamb NOT mince')).toEqual([
+      {'type': 'word', 'token': 'lamb'},
+      {'type': 'not', 'token': 'NOT'},
+      {'type': 'word', 'token': 'mince'}
+    ])
+
+    expect(tokenize('lamb no mince')).toEqual([
+      {'type': 'word', 'token': 'lamb'},
+      {'type': 'not', 'token': 'no'},
+      {'type': 'word', 'token': 'mince'}
+    ])
+
+    expect(tokenize('lamb NO mince')).toEqual([
+      {'type': 'word', 'token': 'lamb'},
+      {'type': 'not', 'token': 'NO'},
+      {'type': 'word', 'token': 'mince'}
+    ])
+  })
 })
