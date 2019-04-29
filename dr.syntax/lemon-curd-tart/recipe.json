@@ -1,0 +1,66 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Lemon curd tart",
+    "attributes": [
+        "nut free"
+    ],
+    "ingredients": [
+        {
+            "name": "sweet shortcrust pastry"
+        },
+        {
+            "name": "lemons",
+            "quantity": {
+                "amount": 6,
+                "notes": "more if small"
+            }
+        },
+        {
+            "name": "eggs",
+            "quantity": {
+                "amount": 6,
+                "unit": "large"
+            }
+        },
+        {
+            "name": "caster sugar",
+            "quantity": {
+                "amount": 170,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "unsalted butter",
+            "quantity": {
+                "amount": 30,
+                "unit": "g"
+            }
+        }
+    ],
+    "steps": [
+        {
+            "task": "Preheat overn to 190ºC."
+        },
+        {
+            "task": "Roll out the chilled pastry and line a 20cm tart tin."
+        },
+        {
+            "task": "Prick the bottom of the pastry case, line with foil and pour in baking beans. Blind bake for 15-20 mins"
+        },
+        {
+            "task": "Take out of the oven and remove the beans. If the base is still soggy return to the overn and bake for another 5 mins."
+        },
+        {
+            "task": "While the case is baking prepare the filling: grate the lemons lightly to remove the zest and reserve."
+        },
+        {
+            "task": "Juice the lemons, then whisk the juice in a bowl with the eggs and sugar to combine."
+        },
+        {
+            "task": "Put the butter and lemon zest in a heavy pan, add the egg mixture and cook over a low heat, stirring constantly until you have a thick custard. This will take about 15 mins."
+        },
+        {
+            "task": "The curd needs no further cooking. Allow to cool slightly, then pur or spoon into the pastry case. Refrigerate until ready to serve."
+        }
+    ]
+}
