@@ -8,9 +8,17 @@ Dr. Syntax (in America known as Syntax, M.D.) is an object model, and file layou
 
 ### Recipes
 
-Each recipe is represented as a core object and optional additional media. The central attributes of each recipe are two lists:
+Each recipe is represented as a core object and optional additional media. The centra properties of each recipe are two lists:
 
- * recipe ingredients, which are objects referencing an ingredient by name, plus a quantity either with amount and unit or just a naked positive number, and optional prep instructions
+ * recipe ingredients, which:
+   * reference an ingredient by name
+   * have an optional quantity which are either a naked positive number, meaning an amount without unit, or contain:
+     * an amount
+     * a unit
+     * optional notes that provide advice on how to modify the amount required (such as "more if they are small")
+   * an optional property of 'optional', meaning that the ingredient can be omitted
+   * an optional prep instruction
+   * an optional note (distinct from the quantity note), which can be used to express a preference; for instance, you could indicate a preferred variety
  * steps, each of which is a narrative of the task to be accomplished
 
 Recipes also have a name, and zero or more attributes (such as "gluten free"), which are used for searching and filtering.
