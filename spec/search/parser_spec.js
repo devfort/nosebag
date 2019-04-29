@@ -21,20 +21,20 @@ const NOT   = op('not');
 describe('parser', () => {
   it('parses a word as a term', () => {
     let tokens = [word('lamb')];
-    expect(parse(tokens)).toEqual(new Term(tokens));
+    expect(parse(tokens)).toEqual(new Term('lamb'));
   })
 
   it('parses multiple words as a term', () => {
     let tokens = [word('lamb'), word('eggs')];
-    expect(parse(tokens)).toEqual(new Term(tokens));
+    expect(parse(tokens)).toEqual(new Term('lamb eggs'));
   })
 
   it('parses an and-expression', () => {
     let tokens = [word('lamb'), AND, word('eggs')];
     expect(parse(tokens)).toEqual(
       new And(
-        new Term([word('lamb')]),
-        new Term([word('eggs')]),
+        new Term('lamb'),
+        new Term('eggs'),
       ))
   })
 
@@ -42,8 +42,8 @@ describe('parser', () => {
     let tokens = [word('lamb'), COMMA, word('eggs')];
     expect(parse(tokens)).toEqual(
       new And(
-        new Term([word('lamb')]),
-        new Term([word('eggs')]),
+        new Term('lamb'),
+        new Term('eggs'),
       ))
   })
 
@@ -51,8 +51,8 @@ describe('parser', () => {
     let tokens = [word('lamb'), word('mince'), AND, word('eggs')];
     expect(parse(tokens)).toEqual(
       new And(
-        new Term([word('lamb'), word('mince')]),
-        new Term([word('eggs')]),
+        new Term('lamb mince'),
+        new Term('eggs'),
       ))
   })
 
@@ -60,8 +60,8 @@ describe('parser', () => {
     let tokens = [word('lamb'), AND, word('boiled'), word('eggs')];
     expect(parse(tokens)).toEqual(
       new And(
-        new Term([word('lamb')]),
-        new Term([word('boiled'), word('eggs')]),
+        new Term('lamb'),
+        new Term('boiled eggs'),
       ))
   })
 
@@ -73,28 +73,28 @@ describe('parser', () => {
 
     expect(parse(tokens)).toEqual(
       new And(
-        new Term([word('lamb')]),
+        new Term('lamb'),
         new And(
-          new Term([word('potato')]),
+          new Term('potato'),
           new And(
-            new Term([word('mint'), word('sauce')]),
-            new Term([word('rosemary')])))))
+            new Term('mint sauce'),
+            new Term('rosemary')))))
   })
 
   it('parses ", and" as a single operator', () => {
     let tokens = [word('fish'), COMMA, AND, word('chips')];
     expect(parse(tokens)).toEqual(
       new And(
-        new Term([word('fish')]),
-        new Term([word('chips')])))
+        new Term('fish'),
+        new Term('chips')))
   })
 
   it('parses an and-not-expression', () => {
     let tokens = [word('meat'), AND, NOT, word('dairy')];
     expect(parse(tokens)).toEqual(
       new AndNot(
-        new Term([word('meat')]),
-        new Term([word('dairy')])))
+        new Term('meat'),
+        new Term('dairy')))
   })
 
   it('parses a not-expression', () => {
@@ -102,14 +102,14 @@ describe('parser', () => {
     expect(parse(tokens)).toEqual(
       new AndNot(
         new Any(),
-        new Term([word('dairy')])))
+        new Term('dairy')))
   })
 
   it('parses and-not with and on both sides', () => {
     let tokens = [word('meat'), COMMA, word('fish'), NOT, word('dairy'), COMMA, word('gluten')];
     expect(parse(tokens)).toEqual(
       new AndNot(
-        new And(new Term([word('meat')]), new Term([word('fish')])),
-        new And(new Term([word('dairy')]), new Term([word('gluten')]))))
+        new And(new Term('meat'), new Term('fish')),
+        new And(new Term('dairy'), new Term('gluten'))))
   })
 })
