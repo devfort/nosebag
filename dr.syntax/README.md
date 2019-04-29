@@ -43,7 +43,7 @@ Ingredients and groups are serialised as one JSON object, stored as `ontology.js
 
 ## Doctor Syntax recommends that
 
- * attributes that indicate absence of something (such as allergens) should be hyphenated; for instanec, "nut-free" or "dairy-free". This is purely to have a convention.
+ * attributes that indicate absence of something (such as allergens) should not be hyphenated; for instanec, "nut free" or "dairy free". This is purely to have a convention.
 
  * units are abbreviated using the most common abbreviation, such as "ml", "g", or "tsp". Again, this is a useful convention.
 
