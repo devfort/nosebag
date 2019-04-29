@@ -1,0 +1,163 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Cauliflower and cumin fritters with yoghurt and lime sauce",
+    "attributes": [
+        "nut free"
+    ],
+    "ingredients": [
+        {
+            "name": "Cauliflower",
+            "quantity": {
+                "amount": 320,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "plain flour",
+            "quantity": {
+                "amount": 120,
+                "unit": "g"
+            }
+        },    
+        {
+            "name": "parsley",
+            "quantity": {
+                "amount": 15,
+                "unit": "g"
+            },
+            "prep": "roughly chopped"
+        },
+        {
+            "name": "garlic",
+            "quantity": {
+                "amount": 1,
+                "unit": "clove"
+            },
+            "prep": "crushed"
+        },
+        {
+            "name": "shallots",
+            "quantity": 2,
+            "prep": "finely chopped"
+        },
+        {
+            "name": "eggs",
+            "quantity": 4
+        },
+        {
+            "name": "white wine",
+            "quantity": {
+                "amount": 100,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "ground cumin",
+            "quantity": {
+                "amount": 1.5,
+                "unit": "tsp"
+            }
+        },
+        {
+            "name": "ground cinnamon",
+            "quantity": {
+                "amount": 1,
+                "unit": "tsp"
+            }
+        },
+        {
+            "name": "ground turmeric",
+            "quantity": {
+                "amount": 0.5,
+                "unit": "tsp"
+            }
+        },
+        {
+            "name": "Greek-style yoghurt",
+            "quantity": {
+                "amount": "300",
+                "unit": "g"
+            }
+        },
+        {
+            "name": "corriander",
+            "quantity": {
+                "amount": 10,
+                "unit": "g"
+            },
+            "prep": "finely chopped"
+        },
+        {
+            "name": "lime",
+            "quantity": 1,
+            "prep": "finely grate the zest"
+        },
+        {
+            "name": "lime juice",
+            "quantity": {
+                "amount": 2,
+                "unit": "tbsp"
+            }
+        },
+        {
+            "name": "olive oil",
+            "quantity": {
+                "amount": 2,
+                "unit": "tbsp"
+            }
+        },
+        {
+            "name": "sunflower oil",
+            "quantity": {
+                "amount": 500,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "salt",
+            "quantity": {
+                "amount": 1.5,
+                "unit": "tsp"
+            }
+        },
+        {
+            "name": "black pepper",
+            "quantity": {
+                "amount": 1,
+                "unit": "tsp"
+            }
+        }
+    ],
+    "steps": [
+        {
+            "task": "To make the sauce, put the yoghurt, corriander, lime zest and juice, and olive oil in a bowk and whisk well."
+        },
+        {
+            "task": "Taste, looking for a vibrant, tart, citrusy flavour, and adjust the seasoning. Chill or leave out for up to an hour."
+        },
+        {
+            "task": "Put a large pan of salted boiling water on to boil. Trim any leaves off the cauliflower and use a small knife to divide it into little florets."
+        },
+        {
+            "task": "Add the florets to the pan of boiling water and simmer for 15 mins or until very soft. Drain into a colander."
+        },
+        {
+            "task": "While the cauliflower is cooking, put the flour, chopped parsely, garlic, shallors, eggs, spices, salt and pepper in a bowl and whisk together well to make a batter."
+        },
+        {
+            "task": "When the mixture is smooth and homogeneous, add the warm cauliflower. Mix to break down the cauliflower into the batter."
+        },
+        {
+            "task": "Pour the sunflower oil into a wide pan to a depth of 1.5 cm and heat up."
+        },
+        {
+            "task": "When it is very hot, carefully spoon in generous portions of the cauliflower mixture, 3 tablespoons per fritter. Take care with the hot oil!"
+        },
+        {
+            "task": "Space the fritters apart with a fish slice, making sure they are not overcrowded. Fry in small batches, controlling the oil termperature so the firstters cook but don't burn. They should take 3-4 minutes on each side."
+        },
+        {
+            "task": "Remove from the pan and drain well on a few layers of kitchen paper. Serve scattered with parsley leaves and with the sauce on the side."
+        }
+    ]
+}
