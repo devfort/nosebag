@@ -23,7 +23,8 @@ describe('filesystem store', () => {
           'chicken-chorizo-gumbo',
           'fish-chorizo-stew',
           'lemon-curd-tart',
-          'rice-pudding'
+          'rice-pudding',
+          'sunday-lamb-roast',
         ]);
     })
   })
