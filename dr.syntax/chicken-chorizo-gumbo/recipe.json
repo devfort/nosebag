@@ -33,7 +33,7 @@
             "quantity": {
                 "amount": 200,
                 "unit": "g"
-            },
+            }
         },
         {
             "name": "chopped tomato",
