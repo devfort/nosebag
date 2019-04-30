@@ -81,4 +81,16 @@ describe('tokenizer', () => {
       {'type': 'word', 'token': 'mince'}
     ])
   })
+
+  it('binds numeric quantities to the following word token', () => {
+    expect(tokenize('3 eggs')).toEqual([
+      {'type': 'quantity', 'token': '3'},
+      {'type': 'word', 'token': 'eggs'}
+    ])
+
+    expect(tokenize('300ml milk')).toEqual([
+      {'type': 'quantity', 'token': '300ml'},
+      {'type': 'word', 'token': 'milk'}
+    ])
+  })
 })
