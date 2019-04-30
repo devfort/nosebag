@@ -1,6 +1,7 @@
-const fs = require('fs'),
-      path = require('path'),
-      Store = require('../../lib/storage/fs');
+const fs        = require('fs'),
+      path      = require('path'),
+      Store     = require('../../lib/storage/store'),
+      FSAdapter = require('../../lib/storage/fs_adapter');
 
 const { Recipe, RecipeIngredient, Quantity, Ingredient } = require('../../lib/models');
 
@@ -8,10 +9,11 @@ const STORE_PATH = path.resolve(__dirname, '..', 'fixtures');
 
 
 describe('filesystem store', () => {
-  let store
+  let adapter, store
 
   beforeEach(() => {
-    store = new Store(STORE_PATH);
+    adapter = new FSAdapter(STORE_PATH);
+    store = new Store(adapter);
   })
 
   describe('list_recipes', () => {
