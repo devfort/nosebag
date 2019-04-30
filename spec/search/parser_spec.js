@@ -1,8 +1,15 @@
-const { parse, Term, And, AndNot, Any } = require('../../lib/search/parser');
+const {
+  parse,
+  QuantityTerm, Term,
+  And, AndNot, Any } = require('../../lib/search/parser');
 
 
 function word(token) {
   return { type: 'word', token }
+}
+
+function quantity(token) {
+    return { type: 'quantity', token }
 }
 
 function non_word(token) {
@@ -31,6 +38,16 @@ describe('parser', () => {
   it('parses multiple words as a term', () => {
     let tokens = [word('lamb'), word('eggs')];
     expect(parse(tokens)).toEqual(new Term('lamb eggs'));
+  })
+
+  it('parses a unitless quantity term', () => {
+    let tokens = [quantity('3'), word('egg')];
+    expect(parse(tokens)).toEqual(new QuantityTerm(3, null, 'egg'));
+  })
+
+  it('parses a unit quantity term', () => {
+    let tokens = [quantity('300ml'), word('milk')];
+    expect(parse(tokens)).toEqual(new QuantityTerm(300, 'ml', 'milk'));
   })
 
   it('parses an and-expression', () => {
