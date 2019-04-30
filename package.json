@@ -4,5 +4,8 @@
   },
   "scripts": {
     "test": "jasmine spec/**/*_spec.js"
+  },
+  "bin": {
+    "search": "./bin/search.js"
   }
 }

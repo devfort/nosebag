@@ -19,6 +19,10 @@ const NOT   = op('not');
 
 
 describe('parser', () => {
+  it('returns an empty token list as null', () => {
+    expect(parse([])).toEqual(null);
+  })
+
   it('parses a word as a term', () => {
     let tokens = [word('lamb')];
     expect(parse(tokens)).toEqual(new Term('lamb'));
