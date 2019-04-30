@@ -1,0 +1,107 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Chicken and chorizo gumbo",
+    "attributes": [
+        "gluten free",
+        "nut free"
+    ],
+    "ingredients": [
+        {
+            "name": "onion",
+            "quantity": 2,
+            "prep": "roughly chopped"
+        },
+        {
+            "name": "celery stick",
+            "quantity": 4,
+            "prep": "roughly chopped"
+        },
+        {
+            "name": "green pepper",
+            "quantity": 2,
+            "prep": "roughly chopped"
+        },
+        {
+            "name": "chicken breast",
+            "quantity": {
+                "amount": 800,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "chorizo",
+            "quantity": {
+                "amount": 200,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "chopped tomato",
+            "quantity": {
+                "amount": 2,
+                "unit": "tin"
+            }
+        },
+        {
+            "name": "chicken stock",
+            "quantity": {
+                "amount": 1000,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "cajun spice",
+            "quantity": {
+                "amount": 6,
+                "unit": "tbsp"
+            }
+        },
+        {
+            "name": "okra",
+            "quantity": {
+                "amount": 400,
+                "unit": "g"
+            },
+            "prep": "sliced"
+        },
+        {
+            "name": "white long grain rice",
+            "quantity": {
+                "amount": 500,
+                "unit": "g"
+            }
+        }
+    ],
+    "steps": [
+        {
+            "task": "Cook the chorizo, then slice into bite-size pieces."
+        },
+        {
+            "task": "Brown the chicken in a frying pan, then break it into bite-size pieces."
+        },
+        {
+            "task": "Heat oil in a saucepan and cook the onion, celery and pepper until softened."
+        },
+        {
+            "task": "Add the cooked chicken, then add the cajun spice. Stir well, and cook for 5 minutes."
+        },
+        {
+            "task": "Add the tomatoes and chorizo, stir well, and cook for 5 minutes."
+        },
+        {
+            "task": "Add the chicken stock and bring the saucepan to the boil, stirring frequently."
+        },
+        {
+            "task": "Reduce the saucepan to a simmer, and cook for 20 minutes."
+        },
+        {
+            "task": "Add the okra and return the saucepan to a simmer. Cook for 30 minutes."
+        },
+        {
+            "task": "White the gumbo is simmering, cook the rice."
+        },
+        {
+            "task": "Serve over rice."
+        }
+    ]
+}

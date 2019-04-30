@@ -1,0 +1,68 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Rice pudding",
+    "attributes": [
+        "dessert"
+    ],
+    "ingredients": [
+        {
+            "name": "white long grain rice",
+            "quantity": {
+                "amount": 100,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "water",
+            "quantity": {
+                "amount": 200,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "milk",
+            "quantity": {
+                "amount": 300,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "white sugar",
+            "quantity": {
+                "amount": 100,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "egg yolk",
+            "quantity": 1
+        },
+        {
+            "name": "vanilla extract",
+            "quantity": {
+                "amount": 0.5,
+                "unit": "tsp"
+            }
+        }
+    ],
+    "steps": [
+        {
+            "task": "Add the rice and water to a saucepan or pot. Bring the water to the boil."
+        },
+        {
+            "task": "Reduce the heat to a simmer, put the lid on the pot, and cook until the rice is done (time will vary according to the rice, check the packaging)."
+        },
+        {
+            "task": "Remove the lid, turn off the heat, then add the sugar and milk. Whisk for a minute or two, until the pan is deglazed."
+        },
+        {
+            "task": "Return the pot to a medium heat, and whisk gently for about 10-15 minutes until the whisk is revealing the base of the pot."
+        },
+        {
+            "task": "Turn off the heat, and add the vanilla extract and egg yolk while whisking. Continue to whisk until both are evenly incorporated."
+        },
+        {
+            "task": "Serve immediately while hot, or chill in the fridge for at least two hours until it is time to serve."
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Sunday roast lamb with veg",
+    "attributes": [
+        "nut free"
+    ],
+    "ingredients": [
+        {
+            "name": "leg of lamb",
+            "quantity": {
+                "amount": 2,
+                "unit": "kg"
+            }
+        },
+        {
+            "name": "potatoes",
+            "quantity": {
+                "amount": 4,
+                "unit": "pieces per person"
+            },
+            "prep": "Peeled and cut into pieces: one large potato will give 3-4 pieces.",
+            "notes": "Preferably King Edward or other floury potatoes."
+        },
+        {
+            "name": "parsnips",
+            "quantity": {
+                "amount": 4,
+                "unit": "pieces per person"
+            },
+             "prep": "Peeled and cut into quarters or halves length ways."
+        },
+        {
+            "name": "green beans",
+            "quantity": {
+                "amount": 400,
+                "unit": "g"
+            },
+            "prep": "washed and trimmed"
+        },
+        {
+            "name": "leeks",
+            "quantity": {
+                "amount": 500,
+                "unit": "g"
+            },
+            "prep": "trimmed, tough outer layer removed, cut into 2.5 cm rounds, thoroughly washed"
+        },
+        {
+            "name": "carrot",
+            "quantity": 1,
+            "prep": "peeled and cut in half length ways"
+        },
+        {
+            "name": "rosemary",
+            "quantity": {
+                "amount": 5,
+                "unit": "sprigs"
+            },
+            "prep": "washed, leaves stripped from 2 sprigs"
+        },
+        {
+            "name": "garlic",
+            "quantity": {
+                "amount": 3,
+                "unit": "cloves"
+            },
+            "prep": "peeled and cut into matchsticks"
+        },
+        {
+            "name": "shallot",
+            "quantity": 2,
+            "prep": "peeled and cut in half"
+        },
+        {
+            "name": "red wine",
+            "quantity": {
+                "amount": 1,
+                "unit": "glass"
+            }
+        },
+        {
+            "name": "plain flour"
+        },
+        {
+            "name": "olive oil",
+            "notes": "or other vegetable oil"
+        },
+        {
+            "name": "black pepper"
+        },
+        {
+            "name": "salt"
+        }
+    ],
+    "steps": [
+        {
+            "task": "IMPORTANT! Calculate the cooking times for the exact weight of lamb. Lamb roasts for 40min per kilo (minimum 90 mins), and needs 15 mins to rest. Roast potatoes need 90mins in the oven. Roast parsnips need 45 mins."
+        },
+        {
+            "task": "This recipe assumes 2kg of lamb, needing 90 mins to cook, so the lamb and potatoes will go into the oven at the same time."
+        },
+        {
+            "task": "Take the lamb out of the fridge approx 2 hours before you start cooking."
+        },
+        {
+            "task": "Prep the spuds and parsnips and leave to one side, submerged in water to prevent browning."
+        },
+        {
+            "task": "Turn the oven on to 190ºC."
+        },
+        {
+            "task": "Place the prepared carrot, shallots and 2 sprigs of rosemary in the bottom of a roasting pan."
+        },
+        {
+            "task": "Pat the leg of lamb dry with kitchen towel. Using a small, sharp knife, make 8-10 incisions all over the leg and push 2-3 rosemary leaves and a sliver of garlic into each incision."
+        },
+        {
+            "task": "Sprinkle the lamb with salt and pepper and place on top of the carrot, shallot and rosemary in the tray. Place the tray near to the oven."
+        },
+        {
+            "task": "Put the potatoes in a large pan, and fill with water so they are just covered. Do not add salt. Bring the water to a boil and simmer for 5 mins."
+        },
+        {
+            "task": "Once the potatoes have come to the boil, pour olive oil into a shallow oven proof dish to a depth of about 0.5 cm and put in the heated oven."
+        },
+        {
+            "task": "Once the spuds have simmered for 5 mins, drain into a colander and place near the oven. Remove the oil from the oven. With care, roll the spuds in the heated oil, then place around the lamb in the roasting pan and salt. If there is not enough room around the lamb, place the spuds in a separate roasting pan or oven proof dish."
+        },
+        {
+            "task": "Put the lamb and the spuds in the oven. Baste the lamb every 30 mins. If the lamb looks like it is cooking too quickly or slowly, adjust the temperature. You can tell if the lamb is done by inserting a sharp knife and see what colour the juices run: they should be clear or slightly pink."
+        },
+        {
+            "task": "When the lamb has been in the oven for 30 mins, par boil the parsnips using the same method for the potatoes. Once drained, remove the lamb and/or spuds from the oven and add the parnsips, rolling the parsnips in the oil already in the pan."
+        },
+        {
+            "task": "While the lamb, spuds and parsnips are cooking, prep the leeks and beans."
+        },
+        {
+            "task": "10 minutes before the lamb is due to come out of the oven, fill two pans with water, add a pinch of salt, and bring to the boil."
+        },
+        {
+            "task": "When the lamb is done (90 minutes for 2kg), bring the roasting pan out of the oven. Leaving the carrot, shallot, rosemary and juices in the pan, put the lamb on a large plate, cover with silver foil and leave to rest. Transfer the spuds and parsnips to a bowl and keep warm."
+        },
+        {
+            "task": "Add the leeks and beans to each of the pans of boiling water. Cook until done (approx 5-6 mins)."
+        },
+        {
+            "task": "Meantime, make gravy as follows: Put the roasting pan on a low heat on the hob. Sprinkle in some flour and use the back of a spoon to incorporate it into the juices. Cook on the heat for a minute, then add the wine, stirring to mix and ensure that no lumps form. Increase the volume of liquid by adding cooking water from the leeks. Taste to check seasoning."
+        },
+        {
+            "task": "Drain the leeks and beans and transfer to serving bowls and put on the table with the spuds and parsnips. Pour the gravy through a sieve into a jug and put on table. Carve the meat onto plates and serve. "
+        }
+    ]
+}

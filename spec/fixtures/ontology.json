@@ -1,0 +1,113 @@
+{
+    "schema": "http://horse.bad/#ingredient",
+    "ingredients": [
+        {
+            "name": "sweet cured, streaky bacon",
+            "group": "butcher",
+            "attributes": [
+                "meat"
+            ]
+        },
+        {
+            "name": "large potato",
+            "group": "vegetable",
+            "attributes": [
+                "gluten free"
+            ]
+        },
+        {
+            "name": "carrot",
+            "group": "vegetable"
+        },
+        {
+            "name": "green cabbage",
+            "group": "vegetable"
+        },
+        {
+            "name": "purple sprouting broccoli",
+            "group": "vegetable"
+        },
+        {
+            "name": "shallot",
+            "group": "vegetable"
+        },
+        {
+            "name": "butter",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
+            "name": "milk",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
+            "name": "black pepper",
+            "group": "spice"
+        },
+        {
+            "name": "onion",
+            "group": "vegetable"
+        },
+        {
+            "name": "celery stick",
+            "group": "vegetable"
+        },
+        {
+            "name": "green pepper",
+            "group": "vegetable"
+        },
+        {
+            "name": "chicken breast",
+            "group": "meat"
+        },
+        {
+            "name": "chorizo",
+            "group": "meat"
+        },
+        {
+            "name": "chopped tomato",
+            "group": "tinned vegetable"
+        },
+        {
+            "name": "chicken stock",
+            "group": "stock"
+        },
+        {
+            "name": "cajun spice",
+            "group": "spice"
+        },
+        {
+            "name": "okra",
+            "group": "vegetable"
+        },
+        {
+            "name": "white long grain rice",
+            "group": "rice"
+        }
+    ],
+    "groups": [
+        {
+            "name": "meat"
+        },
+        {
+            "name": "vegetable"
+        },
+        {
+            "name": "spice"
+        },
+        {
+            "name": "tinned vegetable"
+        },
+        {
+            "name": "stock"
+        },
+        {
+            "name": "rice"
+        }
+    ]
+}

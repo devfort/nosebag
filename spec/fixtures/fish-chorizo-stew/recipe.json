@@ -1,0 +1,118 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Fish and chorizo stew",
+    "attributes": [
+        "gluten free",
+        "nut free"
+    ],
+    "ingredients": [
+        {
+            "name": "olive oil",
+            "quantity": {
+                "amount": 1,
+                "unit": "tbsp"
+            }
+        },
+        {
+            "name": "fennel seeds",
+            "quantity": {
+                "amount": 0.5,
+                "unit": "tsp"
+            },
+            "optional": true
+        },
+        {
+            "name": "chorizo",
+            "quantity": {
+                "amount": 200,
+                "unit": "g"
+            },
+            "prep": "cut into small pieces"
+        },
+        {
+            "name": "garlic",
+            "quantity": {
+                "amount": 2,
+                "unit": "cloves"
+            },
+            "prep": "peeled and sliced"
+        },
+        {
+            "name": "onions",
+            "quantity": 2,
+            "prep": "peeled and sliced"
+        },
+        {
+            "name": "celery",
+            "quantity": {
+                "amount": 2,
+                "unit": "sticks"
+            },
+            "prep": "chopped"
+        },
+        {
+            "name": "white wine",
+            "quantity": {
+                "amount": 100,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "tinned plum tomatoes",
+            "quantity": {
+                "amount": 800,
+                "unit": "g"
+            },
+            "prep": "crushed with your hands"
+        },
+        {
+            "name": "white fish fillets",
+            "quantity": {
+                "amount": 750,
+                "unit": "g"
+            },
+            "prep": "skin and bones removed, cut into largeish pieces"
+        },
+        {
+            "name": "salt"
+        },
+        {
+            "name": "black pepper",
+            "prep": "freshly ground"
+        },
+        {
+            "name": "parsley",
+            "prep": "chopped",
+            "optional": true
+        }
+    ],
+    "steps": [
+        {
+            "task": "Heat the oil in a large saucepan or casserole over a medium-low heat."
+        },
+        {
+            "task": "Add the fennel seeds (if using) and cook for a minute or two, then add the chorizo and fry for a few minutes until the red fat starts to run."
+        },
+        {
+            "task": "Add the garlic, onion and celery and cook gently, stirring often, for 12-15 minutes, until the onion is nice and soft."
+        },
+        {
+            "task": "Add the white wine and cook until it has nearly all evaporated."
+        },
+        {
+            "task": "Add the crushed tomoatoes and their juice, and a little salt and pepper, and bring to a simmer."
+        },
+        {
+            "task": "Simmer for about 30 minutes, stirring often, until rich and thick."
+        },
+        {
+            "task": "Taste the sauce and add more salt and pepper if needed. You can leave it at this stage and come back to it or chill or freeze it for another day. Either way, bring it back to a simmer."
+        },
+        {
+            "task": "Add the fish, turn gently in the sauce. Cover the pan and cook for 5 minutes or so, until the fish is just cooked."
+        },
+        {
+            "task": "Serve, scattered with the parsley if you like, with bread, rice, pasta or potatoes."
+        }
+    ]
+}

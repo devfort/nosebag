@@ -4,7 +4,7 @@ const fs = require('fs'),
 
 const { Recipe, RecipeIngredient, Quantity, Ingredient } = require('../../lib/models');
 
-const STORE_PATH = path.resolve(__dirname, '..', '..', 'dr.syntax');
+const STORE_PATH = path.resolve(__dirname, '..', 'fixtures');
 
 
 describe('filesystem store', () => {
