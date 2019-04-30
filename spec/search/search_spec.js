@@ -1,9 +1,12 @@
-let { Recipe, Ingredient, RecipeIngredient } = require('../../lib/models');
-let { Term, And, AndNot } = require('../../lib/search/nodes');
+let { Quantity, Recipe, Ingredient, RecipeIngredient } = require('../../lib/models');
+let { QuantityTerm, Term, And, AndNot } = require('../../lib/search/nodes');
 
 let bacon = new Ingredient('bacon', [ 'meat' ]);
 let potato = new Ingredient('large potato');
 let chorizo = new Ingredient('chorizo', [ 'meat' ]);
+let egg = new Ingredient('egg');
+let four = new Quantity(4, null);
+let some_grams = new Quantity(200, 'g');
 let bacon_hash = new Recipe(
   'bacon hash',
   [ 'gluten-free' ],
@@ -15,7 +18,12 @@ let bacon_hash = new Recipe(
 let gumbo = new Recipe(
   'gumbo',
   [ 'gluten-free' ],
-  [ new RecipeIngredient(chorizo) ],
+  [ new RecipeIngredient(chorizo, some_grams) ],
+);
+let scrambled_eggs = new Recipe(
+  'scrambled eggs',
+  [],
+  [ new RecipeIngredient(egg, four) ],
 );
 
 describe('term_node', () => {
@@ -42,6 +50,20 @@ describe('term_node', () => {
   })
 });
 
+describe('quantity_node', () => {
+  it('matches recipe ingredients with unitless quantities', () => {
+    expect(new QuantityTerm(5, null, 'egg').matches(scrambled_eggs)).toEqual(true);
+    expect(new QuantityTerm(4, null, 'egg').matches(scrambled_eggs)).toEqual(true);
+    expect(new QuantityTerm(3, null, 'egg').matches(scrambled_eggs)).toEqual(false);
+  })
+
+  it('matches recipe ingredients with unit quantities', () => {
+    expect(new QuantityTerm(300, 'g', 'chorizo').matches(gumbo)).toEqual(true);
+    expect(new QuantityTerm(200, 'g', 'chorizo').matches(gumbo)).toEqual(true);
+    expect(new QuantityTerm(199, 'g', 'chorizo').matches(gumbo)).toEqual(false);
+  })
+});
+
 describe('and_node', () => {
   it('matches both subtrees', () => {
     expect(
@@ -55,6 +77,12 @@ describe('and_node', () => {
     ).toEqual(false);
     expect(
       new And(new Term('gumbo'), new Term('hash')).matches(gumbo)
+    ).toEqual(false);
+    expect(
+      new And(new QuantityTerm(200, 'g', 'chorizo'), new Term('meat')).matches(gumbo)
+    ).toEqual(true);
+    expect(
+      new And(new QuantityTerm(200, 'g', 'chorizo'), new Term('egg')).matches(gumbo)
     ).toEqual(false);
   })
 });
@@ -73,5 +101,17 @@ describe('andnot_node', () => {
     expect(
       new AndNot(new Term('gluten-free'), new Term('bacon')).matches(gumbo)
     ).toEqual(true);
+    expect(
+      new AndNot(
+        new QuantityTerm(200, 'g', 'chorizo'),
+        new Term('egg')
+      ).matches(gumbo)
+    ).toEqual(true);
+    expect(
+      new AndNot(
+        new QuantityTerm(200, 'g', 'chorizo'),
+        new Term('gluten-free')
+      ).matches(gumbo)
+    ).toEqual(false);
   })
 });
