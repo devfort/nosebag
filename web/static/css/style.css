@@ -1,0 +1,211 @@
+@import "normalise.css";
+
+/* App chrome styling */
+body {
+    font-size: 24px;
+}
+
+header {
+    background-color: #aaa;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+header > h1 {
+}
+header > nav {
+}
+header > nav > ol {
+    display: flex;
+    justify-content: flex-end;
+}
+header > nav > ol > li {
+    margin-left: 5px;
+    display: inline;
+    text-align: right;
+}
+header > nav > ol > li > button > b {
+    position: absolute;
+    left: -9999px;
+}
+header > nav > ol > li.shopping-list {
+    background-color: yellow; /* For Spencer */
+    border: 1px solid orange;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+header > nav > ol > li.shopping-list:before {
+    display: inline;
+    content: "\1f6d2";
+    margin-right: 5px;
+}
+header > nav > ol > li.search {
+    padding: 0 10px;
+}
+header > nav > ol > li.search:before {
+    content: "\1f50e";
+}
+#content {
+    padding: 5px;
+}
+
+/* Buttons is buttons. */
+#content button {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: lightgray;
+    padding: 0 5px;
+}
+
+/* Shopping list */
+
+body.shopping-list #content > h2 {
+    margin: 10px 0;
+    font-family: sans-serif;
+}
+
+body.shopping-list #content > h2 > button {
+    float: right;
+}
+
+body.shopping-list #content > ol.recipes {
+}
+
+body.shopping-list #content > ol.recipes > li {
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+body.shopping-list #content > ol.recipes > li > .quantity {
+    display: flex;
+}
+
+body.shopping-list #content > ol.recipes > li > .quantity:before {
+    display: inline;
+    content: "x";
+}
+
+body.shopping-list #content > ol.groups > li {
+    margin: 10px 0;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+body.shopping-list #content > ol.groups > li > h3 {
+    background-color: lightgray;
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+body.shopping-list #content > ol.groups > li.unclassified > h3 {
+    position: absolute;
+    left: -9999px;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li {
+    margin: 5px;
+    padding: 0 5px;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li:after {
+    margin-bottom: 5px;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li.i-have-this > p:first-child:before {
+    content: "\2714";
+    padding-right: 5px;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li > p > button {
+    float: right;
+    border: none;
+    background: transparent;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li.recipe-use-open {
+    border: 1px dashed black;
+    border-radius: 0 0 5px 5px;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li > button.i-have-this {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li > ol.recipe-use {
+    color: gray;
+}
+
+body.shopping-list #content > ol.groups > li > ol.items > li > ol.recipe-use a {
+    color: inherit;
+}
+
+body.shopping-list #content > footer {
+    font-family: sans-serif;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+body.shopping-list #popup {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    right: 10px;
+    width: auto;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    background: lightgray;
+
+    padding: 10px;
+    min-height: 35%;
+}
+
+body.shopping-list #popup > p {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+body.shopping-list #popup > p > span {
+    font-weight: bold;
+}
+
+body.shopping-list #popup > p > i.quantity {
+    display: block;
+    margin: 20px 0;
+    font-size: 400%;
+    font-family: serif;
+}
+
+body.shopping-list #popup > p > i.quantity:before {
+    content: "x";
+}
+
+body.shopping-list #popup > p > i.quantity > b {
+    position: absolute;
+    left: -9999px;
+}
+
+body.shopping-list #popup > p > button {
+    font-size: 400%;
+    min-width: 25%;
+    display: inline;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: lightgray;
+    padding: 0 5px;
+}
+
+body.shopping-list #popup > p > button.increase {
+    margin-left: 10%;
+}
