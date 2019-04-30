@@ -111,6 +111,21 @@ describe('collate_recipes', () => {
     expect(shopping_list.groups[0].ingredients.length).toEqual(1);
     expect(shopping_list.groups[0].ingredients[0].name).toEqual('bread');
   })
+
+  it('copes with the same recipe twice', () => {
+    let shopping_list = collate_recipes([ bacon_sandwich, bacon_sandwich ]);
+    expect(shopping_list.groups[1].name).toEqual('meat');
+    expect(shopping_list.groups[1].ingredients.length).toEqual(1);
+    expect(shopping_list.groups[1].ingredients[0].quantity.amount).toEqual(100);
+    expect(shopping_list.groups[1].ingredients[0].quantity.unit).toEqual('g');
+    // And it should have the (singular) RI object _twice_ because otherwise
+    // we don't know that the 100g is being used as 50g twice. If we only
+    // included the RI object once, we'd either have to decorate it with x2
+    // or we would show 100g of bacon having only 50g used, which is misleading.
+    expect(
+      shopping_list.groups[1].ingredients[0].recipe_ingredients.length
+    ).toEqual(2);
+  })
 });
 
 describe('collate_quantities', () => {
