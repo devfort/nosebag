@@ -51,6 +51,10 @@ describe('filesystem store', () => {
       expect(recipe.name).toEqual('Rice pudding');
     })
 
+    it('exposes the recipe ID', () => {
+      expect(recipe.id).toEqual('rice-pudding');
+    })
+
     it('exposes the attributes', () => {
       expect(recipe.attributes).toEqual(['dessert']);
     })
