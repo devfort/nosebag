@@ -60,15 +60,23 @@ describe('filesystem store', () => {
     })
 
     it('exposes the ingredient list', () => {
-      let ingredients = recipe.ingredients;
-      expect(ingredients.length).toEqual(6);
-      expect(ingredients[0] instanceof RecipeIngredient).toBeTruthy();
+      expect(recipe.ingredients.length).toEqual(6);
     })
 
     it('builds RecipeIngredient objects', () => {
       let item = recipe.ingredients[0];
+      expect(item instanceof RecipeIngredient).toBeTruthy();
       expect(item.recipe).toEqual(recipe);
-      expect(item.ingredient).toEqual(new Ingredient('white long grain rice'));
+    })
+
+    it('supplies Ingredient metadata', () => {
+      let expected = new Ingredient('white long grain rice', [], 'rice');
+      let item = recipe.ingredients[0];
+      expect(item.ingredient).toEqual(expected);
+    })
+
+    it('builds Quantity objects', () => {
+      let item = recipe.ingredients[0];
       expect(item.quantity).toEqual(new Quantity(100, 'g'))
     })
 
