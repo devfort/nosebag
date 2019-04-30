@@ -1,8 +1,20 @@
 {
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
   "devDependencies": {
-    "jasmine": "*"
+    "@babel/core": "*",
+    "@babel/preset-react": "*",
+    "babel-loader": "*",
+    "jasmine": "*",
+    "webpack": "*",
+    "webpack-cli": "*"
   },
   "scripts": {
+    "build": "webpack",
+    "dist": "NODE_ENV=production webpack",
+    "start": "webpack --watch",
     "test": "jasmine spec/**/*_spec.js"
   },
   "bin": {
