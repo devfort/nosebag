@@ -3,7 +3,9 @@ const path = require('path');
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
 
-  entry: path.resolve(__dirname, 'lib', 'ui', 'app'),
+  entry: {
+    app: path.resolve(__dirname, 'lib', 'ui', 'app')
+  },
 
   output: {
     path: path.resolve(__dirname, 'web'),

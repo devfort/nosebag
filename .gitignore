@@ -1,2 +1,2 @@
 node_modules
-web/app.js
+web/*.bundle.js
