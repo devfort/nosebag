@@ -231,6 +231,7 @@ body.shopping-list #popup > p > button.increase {
 }
 
 #content .search > form > input {
+    width: calc(100% - 12px); /* padding + border */
     display: block;
     border: 1px solid black;
     border-radius: 5px;
