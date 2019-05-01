@@ -84,6 +84,11 @@ describe('collate_recipes', () => {
       shopping_list.groups[1].ingredients[0].recipe_ingredients.length
     ).toEqual(2);
   })
+
+  it('copes with no recipes at all', () => {
+    let shopping_list = collate_recipes([]);
+    expect(shopping_list.groups.length).toEqual(0);
+  });
 });
 
 describe('collate_quantities', () => {
