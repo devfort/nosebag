@@ -313,10 +313,6 @@ body.shopping-list #popup > p > button.increase {
     margin-bottom: 0.2em;
 }
 
-#content .search #results-or-examples > ol.results > li > p.serves {
-    margin-bottom: 20px;
-}
-
 #content .search #results-or-examples > ol.results > li > p.serves > b {
     position: absolute;
     left: -9999px;
@@ -342,6 +338,7 @@ body.shopping-list #popup > p > button.increase {
 }
 
 #content .search #results-or-examples > ol.results .ingredients {
+    margin-top: 20px;
     column-gap: 1em;
     columns: 1;
 }

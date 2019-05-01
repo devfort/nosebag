@@ -65,6 +65,10 @@ describe('filesystem store', () => {
       expect(recipe.ingredients.length).toEqual(6);
     })
 
+    it('exposes the recipe serves', () => {
+      expect(recipe.serves).toEqual('4 to 6');
+    })
+
     it('builds RecipeIngredient objects', () => {
       let item = recipe.ingredients[0];
       expect(item instanceof RecipeIngredient).toBeTruthy();

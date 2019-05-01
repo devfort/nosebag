@@ -1,6 +1,7 @@
 {
     "schema": "http://horse.bad/#recipe",
     "name": "Sausage and pea ragu",
+    "serves": "6 to 8",
     "ingredients": [
         {
             "name": "olive oil"

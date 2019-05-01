@@ -10,6 +10,7 @@ let some_grams = new Quantity(200, 'g');
 let bacon_hash = new Recipe(
   'bacon-hash',
   'bacon hash',
+  null,
   [ 'gluten-free' ],
   [
     new RecipeIngredient(bacon),
@@ -19,18 +20,21 @@ let bacon_hash = new Recipe(
 let gumbo = new Recipe(
   'gumbo',
   'gumbo',
+  "4 to 6",
   [ 'gluten-free' ],
   [ new RecipeIngredient(chorizo, some_grams) ],
 );
 let scrambled_eggs = new Recipe(
   'scrambled-eggs',
   'scrambled eggs',
+  "2",
   [],
   [ new RecipeIngredient(egg, four) ],
 );
 let boiled_egg = new Recipe(
   'boiled-egg',
   'boiled egg',
+  "1",
   [],
   [ new RecipeIngredient(egg) ],
 );

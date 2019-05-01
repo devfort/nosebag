@@ -1,6 +1,7 @@
 {
     "schema": "http://horse.bad/#recipe",
     "name": "Key lime pie",
+    "serves": "12 portions",
     "attributes": [
         "dessert"
     ],

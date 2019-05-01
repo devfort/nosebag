@@ -1,6 +1,7 @@
 {
     "schema": "http://horse.bad/#recipe",
     "name": "Chicken and chorizo gumbo",
+    "serves": "8 to 12 people",
     "attributes": [
         "gluten free",
         "nut free"

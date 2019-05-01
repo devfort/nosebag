@@ -12,6 +12,7 @@ let bread = new Ingredient('bread');
 let bacon_hash = new Recipe(
   'bacon-hash',
   'bacon hash',
+  '4',
   [ 'gluten-free' ],
   [
     new RecipeIngredient(bacon, quantity=new Quantity(100, 'g')),
@@ -21,12 +22,14 @@ let bacon_hash = new Recipe(
 let gumbo = new Recipe(
   'gumbo',
   'gumbo',
+  'four to six',
   [ 'gluten-free' ],
   [ new RecipeIngredient(chorizo) ],
 );
 let bacon_sandwich = new Recipe(
   'bacon-sandwich',
   'bacon sandwich',
+  'one',
   [ 'nut-free' ],
   [
     new RecipeIngredient(bacon, quantity=new Quantity(50, 'g')),
@@ -36,6 +39,7 @@ let bacon_sandwich = new Recipe(
 let potato_surprise = new Recipe(
   'potato-surprise',
   'potato surprise',
+  'nobody',
   [],
   [
     new RecipeIngredient(potato, quantity=new Quantity(200, 'g')),

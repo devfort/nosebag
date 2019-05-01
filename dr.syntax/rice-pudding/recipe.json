@@ -1,6 +1,7 @@
 {
     "schema": "http://horse.bad/#recipe",
     "name": "Rice pudding",
+    "serves": "4 to 8 people",
     "attributes": [
         "dessert"
     ],
