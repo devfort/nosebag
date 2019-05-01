@@ -100,7 +100,7 @@ header > nav > ol > li.search button:before {
 
 #content .shopping-list > ol.recipes > li > .quantity:before {
     display: inline;
-    content: "x";
+    content: "\2a09";
 }
 
 #content .shopping-list > ol.groups > li {
@@ -225,7 +225,7 @@ body.shopping-list #popup > p > i.quantity {
 }
 
 body.shopping-list #popup > p > i.quantity:before {
-    content: "x";
+    content: "\2a09";
 }
 
 body.shopping-list #popup > p > i.quantity > b {
