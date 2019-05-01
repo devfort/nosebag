@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    app: path.resolve(__dirname, 'lib', 'ui', 'app')
+    app: path.resolve(__dirname, 'lib', 'ui', 'startup')
   },
 
   output: {
