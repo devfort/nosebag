@@ -51,12 +51,18 @@ header > nav > ol > li.search:before {
     padding: 5px;
 }
 
-/* Buttons is buttons. */
+/* Fairly common across screens */
+
 #content button {
     border: 1px solid black;
     border-radius: 5px;
     background: lightgray;
     padding: 0 5px;
+}
+
+#content > div > h2 {
+    margin: 10px 0;
+    font-family: sans-serif;
 }
 
 /* Shopping list */
@@ -209,4 +215,109 @@ body.shopping-list #popup > p > button {
 
 body.shopping-list #popup > p > button.increase {
     margin-left: 10%;
+}
+
+/* Search */
+
+#content .search > form {
+}
+
+#content .search > form > input {
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 0 10px;
+    padding: 0 5px;
+}
+
+#content .search > form > button {
+    margin-bottom: 30px;
+}
+
+#content .search #results-or-examples > ol.samples {
+    margin: 10px 0;
+}
+
+#content .search #results-or-examples > ol.samples > li {
+}
+
+#content .search #results-or-examples > ol.samples > li > a {
+    display: block;
+    padding: 5px 20px;
+    color: gray;
+    text-decoration: none;
+}
+
+#content .search #results-or-examples > ol.results {
+}
+
+#content .search #results-or-examples > ol.results > li {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px 10px 10px;
+}
+
+#content .search #results-or-examples > ol.results > li > h2 {
+    font-family: sans-serif;
+}
+
+#content .search #results-or-examples > ol.results > li > p.serves {
+    margin-bottom: 20px;
+}
+
+#content .search #results-or-examples > ol.results > li > p.serves > b {
+    position: absolute;
+    left: -9999px;
+}
+
+#content .search #results-or-examples > ol.results .ingredients > ol > li {
+    margin-bottom: 5px;
+}
+
+#content .search #results-or-examples > ol.results > li > button {
+    background: yellow;
+    margin-top: 20px;
+    padding: 5px 10px;
+}
+#content .search #results-or-examples > ol.results > li > button:before {
+    content: "\1f6d2";
+    margin-right: 10px;
+}
+
+/* We don't show the h3s (list titles anywhere, but we'll show steps
+ * on larger devices.
+ */
+#content .search #results-or-examples > ol.results .ingredients > h3,
+#content .search #results-or-examples > ol.results .steps > h3,
+#content .search #results-or-examples > ol.results .steps {
+    position: absolute;
+    left: -9999px;
+}
+
+@media (min-width: 768px) {
+    #content .search #results-or-examples > ol.results .ingredients {
+        columns: 2;
+    }
+    #content .search #results-or-examples > ol.results .steps {
+        position: relative;
+        left: 0;
+        margin-top: 20px;
+    }
+    #content .search #results-or-examples > ol.results .steps > ol {
+        counter-reset: recipe-steps-counter;
+    }
+    #content .search #results-or-examples > ol.results .steps > ol > li {
+        list-style: none;
+        counter-increment: recipe-steps-counter;
+    }
+    #content .search #results-or-examples > ol.results .steps > ol > li::before {
+        content: counter(recipe-steps-counter) ". ";
+    }
+    #content .search #results-or-examples > ol.results .steps > ol > li.prep {
+        counter-reset: recipe-steps-counter;
+        counter-increment: none;
+    }
+    #content .search #results-or-examples > ol.results .steps > ol > li.prep::before {
+        content: "P. ";
+    }
 }
