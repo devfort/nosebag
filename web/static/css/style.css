@@ -181,6 +181,18 @@ header > nav > ol > li.search button:before {
     padding: 5px;
 }
 
+/* Prototype popup:
+
+<div id='popup'>
+  <p>
+    Shopping for <span>bacon hash</span>
+    <i class='quantity'>2<b> times.</b></i>
+    <button class='decrease'>-</button> <button class='increase'>+</button>
+  </p>
+</div>
+
+ */
+
 body.shopping-list #popup {
     position: absolute;
     top: 25%;
