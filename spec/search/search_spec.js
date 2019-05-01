@@ -8,6 +8,7 @@ let egg = new Ingredient('egg');
 let four = new Quantity(4, null);
 let some_grams = new Quantity(200, 'g');
 let bacon_hash = new Recipe(
+  'bacon-hash',
   'bacon hash',
   [ 'gluten-free' ],
   [
@@ -17,18 +18,21 @@ let bacon_hash = new Recipe(
 );
 let gumbo = new Recipe(
   'gumbo',
+  'gumbo',
   [ 'gluten-free' ],
   [ new RecipeIngredient(chorizo, some_grams) ],
 );
 let scrambled_eggs = new Recipe(
+  'scrambled-eggs',
   'scrambled eggs',
   [],
   [ new RecipeIngredient(egg, four) ],
 );
 let boiled_egg = new Recipe(
-    'boiled egg',
-    [],
-    [ new RecipeIngredient(egg) ],
+  'boiled-egg',
+  'boiled egg',
+  [],
+  [ new RecipeIngredient(egg) ],
 );
 
 describe('term_node', () => {
