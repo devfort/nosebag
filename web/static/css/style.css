@@ -12,6 +12,7 @@ header {
     display: flex;
     justify-content: space-between;
     font-family: sans-serif;
+    line-height: 1.6;
 }
 header > h1 {
 }
@@ -35,10 +36,6 @@ header > nav > ol > li {
     border: 1px solid #555;
     border-radius: 5px;
     padding: 0 10px;
-}
-header > nav > ol > li,
-header > nav > ol > li button {
-    line-height: 1.6;
 }
 header > nav > ol > li.shopping-list {
     background-color: yellow; /* For Spencer */
