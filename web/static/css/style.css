@@ -286,6 +286,7 @@ body.shopping-list #popup > p > button.increase {
     border: 1px solid lightgray;
     border-radius: 5px;
     padding: 5px 10px 10px;
+    margin-bottom: 10px;
 }
 
 #content .search #results-or-examples > ol.results > li > h2 {
