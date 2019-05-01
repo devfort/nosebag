@@ -44,7 +44,7 @@ header > nav > ol > li.shopping-list {
     background-color: yellow; /* For Spencer */
     border-color: #770;
 }
-header > nav > ol > li.shopping-list:before {
+header > nav > ol > li.shopping-list button:before {
     content: "\1f6d2";
     margin-right: 10px;
 }
