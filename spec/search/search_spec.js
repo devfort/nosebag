@@ -25,6 +25,11 @@ let scrambled_eggs = new Recipe(
   [],
   [ new RecipeIngredient(egg, four) ],
 );
+let boiled_egg = new Recipe(
+    'boiled egg',
+    [],
+    [ new RecipeIngredient(egg) ],
+);
 
 describe('term_node', () => {
   it('matches recipe names', () => {
@@ -61,6 +66,14 @@ describe('quantity_node', () => {
     expect(new QuantityTerm(300, 'g', 'chorizo').matches(gumbo)).toEqual(true);
     expect(new QuantityTerm(200, 'g', 'chorizo').matches(gumbo)).toEqual(true);
     expect(new QuantityTerm(199, 'g', 'chorizo').matches(gumbo)).toEqual(false);
+  })
+
+  it('matches recipe ingredients without quantity', () => {
+    expect(new QuantityTerm(2, null, 'egg').matches(boiled_egg)).toEqual(true);
+  })
+
+  it('doesnt match different recipe ingredients regardless of quantity', () => {
+    expect(new QuantityTerm(2, null, 'egg').matches(gumbo)).toEqual(false);
   })
 });
 
