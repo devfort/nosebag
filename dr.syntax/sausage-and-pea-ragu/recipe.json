@@ -1,0 +1,117 @@
+{
+    "schema": "http://horse.bad/#recipe",
+    "name": "Sausage and pea ragu",
+    "ingredients": [
+        {
+            "name": "olive oil"
+        },
+        {
+            "name": "pork sausage",
+            "quantity": {
+                "amount": 250,
+                "unit": "g"
+            },
+            "prep": "remove the meat, discard the skin"
+        },
+        {
+            "name": "onion",
+            "quantity": 2,
+            "prep": "roughly diced"
+        },
+        {
+            "name": "red wine",
+            "quantity": {
+                "amount": 50,
+                "unit": "ml"
+            }
+        },
+        {
+            "name": "tomato puree",
+            "quantity": {
+                "amount": 60,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "garlic",
+            "quantity": {
+                "amount": 2,
+                "unit": "clove"
+            },
+            "prep": "crushed"
+        },
+        {
+            "name": "red pepper",
+            "quantity": 2,
+            "prep": "roughly diced"
+        },
+        {
+            "name": "tinned chopped tomatoes",
+            "quantity": {
+                "amount": 800,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "thyme",
+            "quantity": {
+                "amount": 10,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "salt"
+        },
+        {
+            "name": "black pepper"
+        },
+        {
+            "name": "frozen garden peas",
+            "quantity": {
+                "amount": 200,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "fusilli pasta",
+            "quantity": {
+                "amount": 500,
+                "unit": "g"
+            }
+        },
+        {
+            "name": "parmesan",
+            "prep": "finely grated",
+            "optional": true
+        }
+    ],
+    "steps": [
+        {
+            "task": "Heat some olive oil in a pot, then fry the sausage meat until browned."
+        },
+        {
+            "task": "Add the onion, and fry until it turns translucent."
+        },
+        {
+            "task": "Add the wine and tomato puree, stir well, and fry for five minutes."
+        },
+        {
+            "task": "Add the garlic and red peppers, and fry for another five minutes."
+        },
+        {
+            "task": "Add the chopped tomatoes, thyme, and season with salt and pepper."
+        },
+        {
+            "task": "Simmer for 30 minutes."
+        },
+        {
+            "task": "While simmering, prepare pasta according to its instructions."
+        },
+        {
+            "task": "Add the frozen peas and cook for a couple of minutes until no longer frozen, but still with some bite."
+        },
+        {
+            "task": "Serve, grating parmesan over the top if desired."
+        }
+    ]
+}
