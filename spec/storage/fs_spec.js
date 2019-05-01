@@ -86,5 +86,11 @@ describe('filesystem store', () => {
       let item = recipe.ingredients[4];
       expect(item.quantity).toEqual(new Quantity(1));
     })
+
+    it('builds Step objects', () => {
+      expect(recipe.steps.length).toEqual(6);
+      let item = recipe.steps[2];
+      expect(item.task).toEqual("Remove the lid, turn off the heat, then add the sugar and milk. Whisk for a minute or two, until the pan is deglazed.");
+    })
   })
 })
