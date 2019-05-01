@@ -1,6 +1,7 @@
 @import "normalise.css";
 
 /* App chrome styling */
+
 body {
     font-size: 24px;
 }
@@ -31,14 +32,14 @@ header > nav > ol > li > button > b {
 }
 header > nav > ol > li.shopping-list {
     background-color: yellow; /* For Spencer */
-    border: 1px solid orange;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 0 10px;
 }
 header > nav > ol > li.shopping-list:before {
     display: inline;
     content: "\1f6d2";
-    margin-right: 5px;
+    margin-right: 10px;
 }
 header > nav > ol > li.search {
     padding: 0 10px;
