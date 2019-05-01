@@ -30,21 +30,29 @@ header > nav > ol > li > button > b {
     position: absolute;
     left: -9999px;
 }
-header > nav > ol > li.shopping-list {
-    background-color: yellow; /* For Spencer */
-    border: 1px solid black;
+header > nav > ol > li {
+    background: #d9d9d9;
+    border: 1px solid #555;
     border-radius: 5px;
     padding: 0 10px;
 }
+header > nav > ol > li,
+header > nav > ol > li button {
+    line-height: 1.6;
+}
+header > nav > ol > li.shopping-list {
+    background-color: yellow; /* For Spencer */
+    border-color: #770;
+}
 header > nav > ol > li.shopping-list:before {
-    display: inline;
     content: "\1f6d2";
     margin-right: 10px;
 }
-header > nav > ol > li.search {
-    padding: 0 10px;
+header > nav > ol > li button {
+    background: transparent;
+    border: 0;
 }
-header > nav > ol > li.search:before {
+header > nav > ol > li.search button:before {
     content: "\1f50e";
 }
 #content {
