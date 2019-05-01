@@ -75,97 +75,107 @@ header > nav > ol > li.search button:before {
 
 /* Shopping list */
 
-body.shopping-list #content > h2 {
-    margin: 10px 0;
-    font-family: sans-serif;
-}
-
-body.shopping-list #content > h2 > button {
+#content .shopping-list > h2 > button {
     float: right;
 }
 
-body.shopping-list #content > ol.recipes {
+#content .shopping-list > ol.recipes {
+    display: none;
 }
 
-body.shopping-list #content > ol.recipes > li {
+#content .shopping-list > ol.recipes.recipe-list-open {
+    display: block;
+}
+
+#content .shopping-list > ol.recipes > li {
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
 }
 
-body.shopping-list #content > ol.recipes > li > .quantity {
+#content .shopping-list > ol.recipes > li > .quantity {
     display: flex;
 }
 
-body.shopping-list #content > ol.recipes > li > .quantity:before {
+#content .shopping-list > ol.recipes > li > .quantity:before {
     display: inline;
     content: "x";
 }
 
-body.shopping-list #content > ol.groups > li {
+#content .shopping-list > ol.groups > li {
     margin: 10px 0;
     border: 1px solid lightgray;
     border-radius: 5px;
 }
 
-body.shopping-list #content > ol.groups > li > h3 {
+#content .shopping-list > ol.groups > li > h3 {
     background-color: lightgray;
     padding: 5px;
     font-family: sans-serif;
 }
 
-body.shopping-list #content > ol.groups > li.unclassified > h3 {
+#content .shopping-list > ol.groups > li.unclassified > h3 {
     position: absolute;
     left: -9999px;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li {
+#content .shopping-list > ol.groups > li > ol.items > li {
     margin: 5px;
     padding: 0 5px;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li:after {
+#content .shopping-list > ol.groups > li > ol.items > li:after {
     margin-bottom: 5px;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li:after {
+#content .shopping-list > ol.groups > li > ol.items > li:after {
     content: " ";
     display: table;
     clear: both;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li.i-have-this > p:first-child:before {
+#content .shopping-list > ol.groups > li > ol.items > li.i-have-this > p:first-child:before {
     content: "\2714";
     padding-right: 5px;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li > p > button {
+#content .shopping-list > ol.groups > li > ol.items > li > p > button {
     float: right;
     border: none;
     background: transparent;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li.recipe-use-open {
-    border: 1px dashed black;
-    border-radius: 0 0 5px 5px;
+#content .shopping-list > ol.groups > li > ol.items > li.recipe-use-open {
+    outline: 1px dashed black;
+    padding-bottom: 5px;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li > button.i-have-this {
-    margin: 5px 0;
+#content .shopping-list > ol.groups > li > ol.items > li > button,
+#content .shopping-list > ol.groups > li > ol.items > li > ol.recipe-use {
+    display: none;
+}
+
+#content .shopping-list > ol.groups > li > ol.items > li.recipe-use-open > button,
+#content .shopping-list > ol.groups > li > ol.items > li.recipe-use-open > ol.recipe-use {
+    display: block;
+}
+
+#content .shopping-list > ol.groups > li > ol.items > li > button.i-have-this {
+    margin: 15px 0 15px;
     width: 100%;
     text-align: center;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li > ol.recipe-use {
+#content .shopping-list > ol.groups > li > ol.items > li > ol.recipe-use {
     color: gray;
 }
 
-body.shopping-list #content > ol.groups > li > ol.items > li > ol.recipe-use a {
+#content .shopping-list > ol.groups > li > ol.items > li > ol.recipe-use a {
     color: inherit;
 }
 
-body.shopping-list #content > footer {
+#content .shopping-list > footer {
     font-family: sans-serif;
     margin-top: 10px;
     padding: 5px;
