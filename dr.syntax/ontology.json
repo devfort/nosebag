@@ -16,6 +16,13 @@
             ]
         },
         {
+            "name": "potato",
+            "group": "vegetable",
+            "attributes": [
+                "gluten free"
+            ]
+        },
+        {
             "name": "carrot",
             "group": "vegetable"
         },
@@ -62,15 +69,25 @@
             "group": "vegetable"
         },
         {
+            "name": "red pepper",
+            "group": "vegetable"
+        },
+        {
             "name": "chicken breast",
-            "group": "meat"
+            "group": "butcher",
+            "attributes": [
+                "meat"
+            ]
         },
         {
             "name": "chorizo",
-            "group": "meat"
+            "group": "butcher",
+            "attributes": [
+                "meat"
+            ]
         },
         {
-            "name": "chopped tomato",
+            "name": "tinned chopped tomato",
             "group": "tinned vegetable"
         },
         {
@@ -88,14 +105,203 @@
         {
             "name": "white long grain rice",
             "group": "rice"
-        }
+        },
+        {
+            "name": "cauliflower",
+            "group": "vegetable"
+        },
+        {
+            "name": "plain flour",
+            "group": "flour"
+        },
+        {
+            "name": "parsley",
+            "group": "herb"
+        },
+        {
+            "name": "thyme",
+            "group": "herb"
+        },
+        {
+            "name": "garlic",
+            "group": "spice"
+        },
+        {
+            "name": "shallot",
+            "group": "vegetable"
+        },
+        {
+            "name": "egg",
+            "group": "dairy"
+        },
+        {
+            "name": "white wine",
+            "group": "alcohol"
+        },
+        {
+            "name": "red wine",
+            "group": "alcohol"
+        },
+        {
+            "name": "ground cumin",
+            "group": "spice"
+        },
+        {
+            "name": "ground cinnamon",
+            "group": "spice"
+        },
+        {
+            "name": "ground tumeric",
+            "group": "spice"
+        },
+        {
+            "name": "greek-style yoghurt",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
+            "name": "coriander",
+            "group": "spice"
+        },
+        {
+            "name": "lime juice",
+            "group": "cooking ingredient"
+        },
+        {
+            "name": "olive oil",
+            "group": "cooking oil"
+        },
+        {
+            "name": "sunflower oil",
+            "group": "cooking oil"
+        },
+        {
+            "name": "salt",
+            "group": "spice"
+        },
+        {
+            "name": "fennel seeds",
+            "group": "spice"
+        },
+        {
+            "name": "tinned plum tomato",
+            "group": "tinned vegetable"
+        },
+        {
+            "name": "white fish fillet",
+            "group": "fishmonger",
+            "attributes": [
+                "fish"
+            ]
+        },
+        {
+            "name": "digestive biscuit",
+            "group": "biscuit"
+        },
+        {
+            "name": "double cream",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
+            "name": "condensed milk",
+            "group": "tinned good"
+        },
+        {
+            "name": "lemon",
+            "group": "fruit"
+        },
+        {
+            "name": "lime",
+            "group": "fruit"
+        },
+        {
+            "name": "sweet shortcrust pastry",
+            "group": "baking ingredient"
+        },
+        {
+            "name": "sugar",
+            "group": "baking ingredient"
+        },
+        {
+            "name": "caster sugar",
+            "group": "baking ingredient"
+        },
+        {
+            "name": "unsalted butter",
+            "group": "dairy",
+            "attributes": [
+                "dairy"
+            ]
+        },
+        {
+            "name": "vanilla extract",
+            "group": "baking ingredient"
+        },
+        {
+            "name": "pork sausage",
+            "group": "butcher",
+            "attributes": [
+                "meat"
+            ]
+        },
+        {
+            "name": "tomato puree",
+            "group": "tinned vegetable"
+        },
+        {
+            "name": "frozen garden pea",
+            "group": "frozen vegetable"
+        },
+        {
+            "name": "fusilli",
+            "group": "pasta"
+        },
+        {
+            "name": "parmesan",
+            "group": "cheese",
+            "attributes": [
+                "cheese",
+                "dairy"
+            ]
+        },
+        {
+            "name": "leg of lamb",
+            "group": "butcher",
+            "attributes": [
+                "meat"
+            ]
+        },
+        {
+            "name": "parsnip",
+            "group": "vegetable"
+        },
+        {
+            "name": "green bean",
+            "group": "vegetable"
+        },
+        {
+            "name": "leek",
+            "group": "vegetable"
+        },
+        {
+            "name": "rosemary",
+            "group": "herb"
+        },
     ],
     "groups": [
         {
-            "name": "meat"
+            "name": "butcher"
         },
         {
             "name": "vegetable"
+        },
+        {
+            "name": "herb"
         },
         {
             "name": "spice"

@@ -36,10 +36,10 @@
             }
         },
         {
-            "name": "chopped tomato",
+            "name": "tinned chopped tomato",
             "quantity": {
-                "amount": 2,
-                "unit": "tin"
+                "amount": 800,
+                "unit": "g"
             }
         },
         {

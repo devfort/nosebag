@@ -13,7 +13,7 @@
             }
         },
         {
-            "name": "potatoes",
+            "name": "potato",
             "quantity": {
                 "amount": 4,
                 "unit": "pieces per person"
@@ -22,7 +22,7 @@
             "notes": "Preferably King Edward or other floury potatoes."
         },
         {
-            "name": "parsnips",
+            "name": "parsnip",
             "quantity": {
                 "amount": 4,
                 "unit": "pieces per person"
@@ -30,7 +30,7 @@
              "prep": "Peeled and cut into quarters or halves length ways."
         },
         {
-            "name": "green beans",
+            "name": "green bean",
             "quantity": {
                 "amount": 400,
                 "unit": "g"
@@ -38,7 +38,7 @@
             "prep": "washed and trimmed"
         },
         {
-            "name": "leeks",
+            "name": "leek",
             "quantity": {
                 "amount": 500,
                 "unit": "g"

@@ -27,15 +27,16 @@
             }
         },
         {
-            "name": "white sugar",
+            "name": "sugar",
             "quantity": {
                 "amount": 100,
                 "unit": "g"
             }
         },
         {
-            "name": "egg yolk",
-            "quantity": 1
+            "name": "egg",
+            "quantity": 1,
+            "prep": "separate the yolk"
         },
         {
             "name": "vanilla extract",

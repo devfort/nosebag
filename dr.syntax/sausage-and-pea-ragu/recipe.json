@@ -46,7 +46,7 @@
             "prep": "roughly diced"
         },
         {
-            "name": "tinned chopped tomatoes",
+            "name": "tinned chopped tomato",
             "quantity": {
                 "amount": 800,
                 "unit": "g"
@@ -66,14 +66,14 @@
             "name": "black pepper"
         },
         {
-            "name": "frozen garden peas",
+            "name": "frozen garden pea",
             "quantity": {
                 "amount": 200,
                 "unit": "g"
             }
         },
         {
-            "name": "fusilli pasta",
+            "name": "fusilli",
             "quantity": {
                 "amount": 500,
                 "unit": "g"

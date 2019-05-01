@@ -6,7 +6,7 @@
     ],
     "ingredients": [
         {
-            "name": "Cauliflower",
+            "name": "cauliflower",
             "quantity": {
                 "amount": 320,
                 "unit": "g"
@@ -36,12 +36,12 @@
             "prep": "crushed"
         },
         {
-            "name": "shallots",
+            "name": "shallot",
             "quantity": 2,
             "prep": "finely chopped"
         },
         {
-            "name": "eggs",
+            "name": "egg",
             "quantity": 4
         },
         {
@@ -73,14 +73,14 @@
             }
         },
         {
-            "name": "Greek-style yoghurt",
+            "name": "greek-style yoghurt",
             "quantity": {
                 "amount": "300",
                 "unit": "g"
             }
         },
         {
-            "name": "corriander",
+            "name": "coriander",
             "quantity": {
                 "amount": 10,
                 "unit": "g"
@@ -130,7 +130,7 @@
     ],
     "steps": [
         {
-            "task": "To make the sauce, put the yoghurt, corriander, lime zest and juice, and olive oil in a bowk and whisk well."
+            "task": "To make the sauce, put the yoghurt, coriander, lime zest and juice, and olive oil in a bowk and whisk well."
         },
         {
             "task": "Taste, looking for a vibrant, tart, citrusy flavour, and adjust the seasoning. Chill or leave out for up to an hour."
