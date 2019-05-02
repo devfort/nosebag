@@ -13,81 +13,81 @@ let {
 
 describe('collate_recipes', () => {
   it('lexically sorted groups with undefined first', () => {
-    let shopping_list = collate_recipes([ bacon_sandwich, bacon_hash ]);
+    let groups = collate_recipes([ bacon_sandwich, bacon_hash ]);
     // Groups should be lexically sorted (but with undefined at the start)
-    expect(shopping_list.groups[0].name).toEqual(undefined);
-    expect(shopping_list.groups[1].name).toEqual('below the ground');
-    expect(shopping_list.groups[2].name).toEqual('meat');
+    expect(groups[0].name).toEqual(undefined);
+    expect(groups[1].name).toEqual('below the ground');
+    expect(groups[2].name).toEqual('meat');
   })
 
   it('pulls together ingredients of the same name', () => {
-    let shopping_list = collate_recipes([ bacon_sandwich, bacon_hash ]);
-    expect(shopping_list.groups.length).toEqual(3);
+    let groups = collate_recipes([ bacon_sandwich, bacon_hash ]);
+    expect(groups.length).toEqual(3);
     // Bacon should have been collapsed into one ingredient
     // within the group
-    expect(shopping_list.groups[2].ingredients.length).toEqual(1);
-    expect(shopping_list.groups[2].ingredients[0].name).toEqual('bacon');
+    expect(groups[2].ingredients.length).toEqual(1);
+    expect(groups[2].ingredients[0].name).toEqual('bacon');
     // And we can access the RecipeIngredients that bacon was found in
     // (which tells us which recipes they came from, because of
     // backlinks).
     expect(
-      shopping_list.groups[2].ingredients[0].recipe_ingredients.length
+      groups[2].ingredients[0].recipe_ingredients.length
     ).toEqual(2);
   })
 
   it('pulls together ingredients in the same group', () => {
-    let shopping_list = collate_recipes([ gumbo, bacon_hash ]);
-    expect(shopping_list.groups.length).toEqual(2);
+    let groups = collate_recipes([ gumbo, bacon_hash ]);
+    expect(groups.length).toEqual(2);
     // Groups should be lexically sorted, with meat last
-    expect(shopping_list.groups[1].name).toEqual('meat');
-    expect(shopping_list.groups[1].ingredients.length).toEqual(2);
+    expect(groups[1].name).toEqual('meat');
+    expect(groups[1].ingredients.length).toEqual(2);
     // Ingredients lexically sorted within the group
-    expect(shopping_list.groups[1].ingredients[0].name).toEqual('bacon');
-    expect(shopping_list.groups[1].ingredients[1].name).toEqual('chorizo');
+    expect(groups[1].ingredients[0].name).toEqual('bacon');
+    expect(groups[1].ingredients[1].name).toEqual('chorizo');
   })
 
   it('adds together quantities of an ingredient', () => {
-    let shopping_list = collate_recipes([ bacon_sandwich, bacon_hash ]);
-    let collated_bacon = shopping_list.groups[2].ingredients[0];
+    let groups = collate_recipes([ bacon_sandwich, bacon_hash ]);
+    let collated_bacon = groups[2].ingredients[0];
     expect(collated_bacon.name).toEqual('bacon');
     expect(collated_bacon.quantity.amount).toEqual(150);
     expect(collated_bacon.quantity.unit).toEqual('g');
   })
 
   it('leaves quantities of different units separate', () => {
-    let shopping_list = collate_recipes([ potato_surprise, bacon_hash ]);
-    collated_potato = shopping_list.groups[0].ingredients[0];
+    let groups = collate_recipes([ potato_surprise, bacon_hash ]);
+    collated_potato = groups[0].ingredients[0];
     expect(collated_potato.name).toEqual('large potato');
     expect(collated_potato.quantity).toEqual(null);
     expect(collated_potato.recipe_ingredients.length).toEqual(2);
   })
 
   it('collates ingredients without a group into an un-named groups', () => {
-    let shopping_list = collate_recipes([ bacon_sandwich ]);
-    expect(shopping_list.groups.length).toEqual(2);
-    expect(shopping_list.groups[0].name).toEqual(undefined);
-    expect(shopping_list.groups[0].ingredients.length).toEqual(1);
-    expect(shopping_list.groups[0].ingredients[0].name).toEqual('bread');
+    let groups = collate_recipes([ bacon_sandwich ]);
+    expect(groups.length).toEqual(2);
+    expect(groups[0].name).toEqual(undefined);
+    expect(groups[0].ingredients.length).toEqual(1);
+    expect(groups[0].ingredients[0].name).toEqual('bread');
   })
 
   it('copes with the same recipe twice', () => {
-    let shopping_list = collate_recipes([ bacon_sandwich, bacon_sandwich ]);
-    expect(shopping_list.groups[1].name).toEqual('meat');
-    expect(shopping_list.groups[1].ingredients.length).toEqual(1);
-    expect(shopping_list.groups[1].ingredients[0].quantity.amount).toEqual(100);
-    expect(shopping_list.groups[1].ingredients[0].quantity.unit).toEqual('g');
+    let groups = collate_recipes([ bacon_sandwich, bacon_sandwich ]);
+    expect(groups[1].name).toEqual('meat');
+    expect(groups[1].ingredients.length).toEqual(1);
+    expect(groups[1].ingredients[0].quantity.amount).toEqual(100);
+    expect(groups[1].ingredients[0].quantity.unit).toEqual('g');
     // And it should have the (singular) RI object _twice_ because otherwise
     // we don't know that the 100g is being used as 50g twice. If we only
     // included the RI object once, we'd either have to decorate it with x2
     // or we would show 100g of bacon having only 50g used, which is misleading.
     expect(
-      shopping_list.groups[1].ingredients[0].recipe_ingredients.length
+      groups[1].ingredients[0].recipe_ingredients.length
     ).toEqual(2);
   })
 
   it('copes with no recipes at all', () => {
-    let shopping_list = collate_recipes([]);
-    expect(shopping_list.groups.length).toEqual(0);
+    let groups = collate_recipes([]);
+    expect(groups.length).toEqual(0);
   });
 });
 
