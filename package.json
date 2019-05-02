@@ -15,7 +15,7 @@
     "build": "webpack",
     "dist": "NODE_ENV=production webpack",
     "start": "webpack --watch",
-    "test": "jasmine spec/**/*_spec.js"
+    "test": "jasmine spec/{**/,}*_spec.js"
   },
   "bin": {
     "search": "./bin/search.js"
