@@ -5,6 +5,15 @@
 body {
     font-size: 24px;
     color: #181818;
+    font-family:
+        'Palatino',
+        'Book Antiqua',
+        'Bookman Old Style',
+        'Baskerville',
+        'Garamond',
+        'Apple Garamond',
+        'New Century Schoolbook',
+            serif;
 }
 
 header {
@@ -16,6 +25,8 @@ header {
     line-height: 1.6;
 }
 header > h1 {
+    font-family: sans-serif;
+    font-weight: bold;
 }
 header > nav {
 }
@@ -69,6 +80,7 @@ header > nav > ol > li.search button:before {
 #content > div > h2 {
     margin: 10px 0;
     font-family: sans-serif;
+    font-weight: bold;
 }
 
 /* Shopping list */
@@ -289,6 +301,9 @@ body.shopping-list #popup > p > button.increase {
 
 #content .search #results-or-examples > ol.results > li > h2 {
     font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
 }
 
 #content .search #results-or-examples > ol.results > li > p.serves {
