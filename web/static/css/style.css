@@ -379,6 +379,21 @@ header > nav > ol > li.search button:before {
     content: "P. ";
 }
 
+#content .search .recipe-panel section.steps {
+    font-size: 0.8em;
+    color: #555;
+}
+
+#content .search .recipe-panel section.steps ol {
+    max-height: 4em;
+    overflow: hidden;
+}
+
+#content .search .recipe-panel section.steps::after {
+    content: '…';
+    display: block;
+}
+
 /* We don't show the h3s (list titles anywhere, but we'll show steps
  * on larger devices.
  */
