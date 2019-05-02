@@ -34,7 +34,7 @@ The central properties of each recipe are two lists:
       variety
 * steps, each of which is a narrative of the task to be accomplished
 
-Recipes also have a name, an optional "name" property to represent how many
+Recipes also have a name, an optional "serves" property to represent how many
 people this recipe will feed, and zero or more attributes (such as "gluten
 free"), which are used for searching and filtering.
 
