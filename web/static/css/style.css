@@ -300,11 +300,21 @@ header > nav > ol > li.search button:before {
     margin-bottom: 10px;
 }
 
-#content .search #results-or-examples > ol.results > li > h2 {
+#content .search #results-or-examples > ol.results > li h2 {
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 0.2em;
+}
+
+#content .search #results-or-examples > ol.results > li h2 a {
+    border-bottom: 2px solid #993;
+}
+
+#content .search #results-or-examples > ol.results > li h2 a:focus,
+#content .search #results-or-examples > ol.results > li h2 a:hover {
+    background: #993;
+    color: white;
 }
 
 #content .search #results-or-examples > ol.results > li > p.serves > b {
