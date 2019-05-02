@@ -73,6 +73,7 @@ header > nav > ol > li.search button:before {
 }
 #content {
     padding: 5px;
+    position: relative;
 }
 
 /* Fairly common across screens */
@@ -198,70 +199,63 @@ header > nav > ol > li.search button:before {
     padding: 5px;
 }
 
-/* Prototype popup:
+/* Shopping list popup to adjust times we're cooking a recipe */
 
-<div id='popup'>
-  <p>
-    Shopping for <span>bacon hash</span>
-    <i class='quantity'>2<b> times.</b></i>
-    <button class='decrease'>-</button> <button class='increase'>+</button>
-  </p>
-</div>
-
- */
-
-body.shopping-list #popup {
+#content .shopping-list > #popup {
     position: absolute;
-    top: 25%;
-    left: 10px;
-    right: 10px;
-    width: auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 40px);
+    background: white;
 
-    border: 1px solid black;
-    border-radius: 5px;
-    background: lightgray;
-
-    padding: 10px;
-    min-height: 35%;
+    padding: 30px 10px 10px;
 }
 
-body.shopping-list #popup > p {
+#content .shopping-list > #popup > p {
     font-family: sans-serif;
     text-align: center;
 }
 
-body.shopping-list #popup > p > span {
+#content .shopping-list > #popup > p > span {
     font-weight: bold;
 }
 
-body.shopping-list #popup > p > i.quantity {
+#content .shopping-list > #popup > p > i.quantity {
     display: block;
     margin: 20px 0;
     font-size: 400%;
     font-family: serif;
 }
 
-body.shopping-list #popup > p > i.quantity:before {
+#content .shopping-list > #popup > p > i.quantity:before {
     content: "\2a09";
 }
 
-body.shopping-list #popup > p > i.quantity > b {
+#content .shopping-list > #popup > p > i.quantity > b {
     position: absolute;
     left: -9999px;
 }
 
-body.shopping-list #popup > p > button {
+#content .shopping-list > #popup > p > button {
     font-size: 400%;
     min-width: 25%;
     display: inline;
     border: 1px solid black;
     border-radius: 5px;
-    background: lightgray;
     padding: 0 5px;
 }
 
-body.shopping-list #popup > p > button.increase {
+#content .shopping-list > #popup > p > button.increase {
     margin-left: 10%;
+}
+
+#content .shopping-list > #popup > button {
+    margin: 40px auto 0;
+    display: block;
+    font-size: 200%;
 }
 
 /* Search */
