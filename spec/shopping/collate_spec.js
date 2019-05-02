@@ -1,6 +1,11 @@
-let { collate_recipes, collate_quantities } = require('../../lib/shopping/collate'),
-    { Quantity } = require('../../lib/models');
 let {
+  collate_recipes,
+  collate_quantities,
+  ShoppingListItem,
+  ShoppingListItemAvailable,
+} = require('../../lib/shopping/collate'),
+    { Quantity, RecipeIngredient, } = require('../../lib/models'),
+    {
   bacon,
   potato,
   chorizo,
@@ -124,4 +129,189 @@ describe('collate_quantities', () => {
     ]);
     expect(quantity).toEqual(null);
   })
+});
+
+describe('ShoppingListItemAvailable', () => {
+  it('satifies the item it was built from', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    ri.recipe = potato_surprise;
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli)).toBe(true);
+  });
+
+  it('satifies an item for the same quantity for the same recipe', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    ri.recipe = potato_surprise;
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(true);
+  });
+
+  it('satifies a similar item from a different recipe', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    let ri_other = new RecipeIngredient(potato, quantity=new Quantity(1));
+    ri.recipe = potato_surprise;
+    ri_other.recipe = bacon_hash;
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri_other ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(true);
+  });
+
+  it('satisfies items across different units', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    let ri_other = new RecipeIngredient(potato, quantity=new Quantity(100, 'g'));
+    ri.recipe = potato_surprise;
+    ri_other.recipe = potato_surprise;
+    let sli = new ShoppingListItem('potato', [ ri, ri_other ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli)).toBe(true);
+  });
+
+  it('satifies two smaller items with no units from other recipes', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    let ri_other = new RecipeIngredient(potato, quantity=new Quantity(1));
+    let ri_other2 = new RecipeIngredient(potato, quantity=new Quantity(1));
+    ri.recipe = potato_surprise;
+    ri_other.recipe = bacon_hash;
+    ri_other2.recipe = gumbo; // this is a lie but a harmless one here
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri_other, ri_other2 ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(true);
+    // And the inverse
+    let slia_other = new ShoppingListItemAvailable(sli);
+    expect(slia_other.satisfies(sli)).toBe(true);
+  });
+
+  it('satifies two smaller items with units from other recipes', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2, 'g'));
+    let ri_other = new RecipeIngredient(potato, quantity=new Quantity(1, 'g'));
+    let ri_other2 = new RecipeIngredient(potato, quantity=new Quantity(1, 'g'));
+    ri.recipe = potato_surprise;
+    ri_other.recipe = bacon_hash;
+    ri_other2.recipe = gumbo; // this is a lie but a harmless one here
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri_other, ri_other2 ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(true);
+    // And the inverse
+    let slia_other = new ShoppingListItemAvailable(sli);
+    expect(slia_other.satisfies(sli)).toBe(true);
+  });
+
+  it('does not satisfy a larger item from a different recipe', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    let ri_other = new RecipeIngredient(potato, quantity=new Quantity(3));
+    ri.recipe = potato_surprise;
+    ri_other.recipe = bacon_hash;
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri_other ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(false);
+  });
+
+  it('does not satisfy an undefined quantity', () => {
+    let ri = new RecipeIngredient(potato, quantity=new Quantity(2));
+    let ri_other = new RecipeIngredient(potato);
+    ri.recipe = potato_surprise;
+    ri_other.recipe = potato_surprise;
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri_other ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(false);
+  });
+
+  it('does not satisfy with an undefined quantity', () => {
+    let ri = new RecipeIngredient(potato);
+    let ri_other = new RecipeIngredient(potato, quantity=new Quantity(2));
+    ri.recipe = potato_surprise;
+    ri_other.recipe = potato_surprise;
+    let sli = new ShoppingListItem('potato', [ ri ]);
+    sli.quantity = collate_quantities(
+      sli.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let sli_other = new ShoppingListItem('potato', [ ri_other ]);
+    sli_other.quantity = collate_quantities(
+      sli_other.recipe_ingredients.map(
+        ri => ri.quantity
+      )
+    )
+    let slia = new ShoppingListItemAvailable(sli);
+    expect(slia.satisfies(sli_other)).toBe(false);
+  });
 });
