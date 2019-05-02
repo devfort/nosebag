@@ -313,6 +313,28 @@ body.shopping-list #popup > p > button.increase {
     margin-right: 10px;
 }
 
+#content .search #results-or-examples > ol.results .steps > ol {
+    counter-reset: recipe-steps-counter;
+}
+
+#content .search #results-or-examples > ol.results .steps > ol > li {
+    list-style: none;
+    counter-increment: recipe-steps-counter;
+}
+
+#content .search #results-or-examples > ol.results .steps > ol > li::before {
+    content: counter(recipe-steps-counter) ". ";
+}
+
+#content .search #results-or-examples > ol.results .steps > ol > li.prep {
+    counter-reset: recipe-steps-counter;
+    counter-increment: none;
+}
+
+#content .search #results-or-examples > ol.results .steps > ol > li.prep::before {
+    content: "P. ";
+}
+
 /* We don't show the h3s (list titles anywhere, but we'll show steps
  * on larger devices.
  */
@@ -331,22 +353,5 @@ body.shopping-list #popup > p > button.increase {
         position: relative;
         left: 0;
         margin-top: 20px;
-    }
-    #content .search #results-or-examples > ol.results .steps > ol {
-        counter-reset: recipe-steps-counter;
-    }
-    #content .search #results-or-examples > ol.results .steps > ol > li {
-        list-style: none;
-        counter-increment: recipe-steps-counter;
-    }
-    #content .search #results-or-examples > ol.results .steps > ol > li::before {
-        content: counter(recipe-steps-counter) ". ";
-    }
-    #content .search #results-or-examples > ol.results .steps > ol > li.prep {
-        counter-reset: recipe-steps-counter;
-        counter-increment: none;
-    }
-    #content .search #results-or-examples > ol.results .steps > ol > li.prep::before {
-        content: "P. ";
     }
 }
