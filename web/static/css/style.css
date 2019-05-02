@@ -4,6 +4,7 @@
 
 body {
     font-size: 24px;
+    color: #181818;
 }
 
 header {
@@ -303,6 +304,11 @@ body.shopping-list #popup > p > button.increase {
     margin-bottom: 5px;
 }
 
+#content .search #results-or-examples > ol.results .ingredients > ol > li i.quantity {
+    font-weight: bold;
+    color: #333;
+}
+
 #content .search #results-or-examples > ol.results > li > button {
     background: yellow;
     margin-top: 20px;
@@ -311,6 +317,11 @@ body.shopping-list #popup > p > button.increase {
 #content .search #results-or-examples > ol.results > li > button:before {
     content: "\1f6d2";
     margin-right: 10px;
+}
+
+#content .search #results-or-examples > ol.results .ingredients {
+    column-gap: 1em;
+    columns: 1;
 }
 
 #content .search #results-or-examples > ol.results .steps {
@@ -355,10 +366,13 @@ body.shopping-list #popup > p > button.increase {
     left: -9999px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     #content .search #results-or-examples > ol.results .ingredients {
         columns: 2;
     }
+}
+
+@media (min-width: 768px) {
     #content .search #results-or-examples > ol.results .steps {
         position: relative;
         left: 0;
@@ -366,5 +380,17 @@ body.shopping-list #popup > p > button.increase {
     #content .search #results-or-examples > ol.results .steps,
     #content .search #results-or-examples > ol.results .ingredients {
         margin-left: 2em;
+    }
+}
+
+@media (min-width: 960px) {
+    #content .search #results-or-examples > ol.results .ingredients {
+        columns: 3;
+    }
+}
+
+@media (min-width: 1100px) {
+    #content .search #results-or-examples > ol.results .ingredients {
+        columns: 4;
     }
 }
