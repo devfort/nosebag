@@ -313,6 +313,11 @@ body.shopping-list #popup > p > button.increase {
     margin-right: 10px;
 }
 
+#content .search #results-or-examples > ol.results .steps {
+    margin-left: 2em;
+    margin-top: 20px;
+}
+
 #content .search #results-or-examples > ol.results .steps > ol {
     counter-reset: recipe-steps-counter;
 }
@@ -320,10 +325,15 @@ body.shopping-list #popup > p > button.increase {
 #content .search #results-or-examples > ol.results .steps > ol > li {
     list-style: none;
     counter-increment: recipe-steps-counter;
+    margin-bottom: 5px;
 }
 
 #content .search #results-or-examples > ol.results .steps > ol > li::before {
-    content: counter(recipe-steps-counter) ". ";
+    content: counter(recipe-steps-counter) ".";
+    margin-left: -2em;
+    width: 1.6em;
+    text-align: right;
+    float: left;
 }
 
 #content .search #results-or-examples > ol.results .steps > ol > li.prep {
@@ -352,6 +362,9 @@ body.shopping-list #popup > p > button.increase {
     #content .search #results-or-examples > ol.results .steps {
         position: relative;
         left: 0;
-        margin-top: 20px;
+    }
+    #content .search #results-or-examples > ol.results .steps,
+    #content .search #results-or-examples > ol.results .ingredients {
+        margin-left: 2em;
     }
 }
