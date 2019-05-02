@@ -63,6 +63,7 @@ describe('shopping list', () => {
     expect(
       list.groups[0].ingredients[0].bought,
     ).toBeTruthy()
+    expect(list.unmarked_item_count()).toEqual(1);
     expect(list.slias.size).toEqual(1);
     expect(list.slias.has('large potato')).toBe(true);
     let slia = list.slias.get('large potato');
@@ -76,6 +77,7 @@ describe('shopping list', () => {
       list.groups[0].ingredients[0].bought,
     ).toBeFalsy()
     expect(list.slias.size).toEqual(0);
+    expect(list.unmarked_item_count()).toEqual(2);
   });
 
   it('re-allocates available items after re-collation', () => {
@@ -93,10 +95,12 @@ describe('shopping list', () => {
     list.mark_item_bought(
       list.groups[1].ingredients[0],
     ); // so we have 200g
+    expect(list.unmarked_item_count()).toEqual(1);
     list.remove(bacon_hash); // we only need 100g
     expect(list.groups[1].ingredients[0].bought).toBeTruthy();
     // Groups are undefined, below the ground, meat
     list.add(bacon_sandwich); // contains 50g, so we need 150g
     expect(list.groups[2].ingredients[0].bought).toBeTruthy();
+    expect(list.unmarked_item_count()).toEqual(2);
   });
 });
