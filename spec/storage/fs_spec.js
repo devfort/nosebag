@@ -96,5 +96,12 @@ describe('filesystem store', () => {
       let item = recipe.steps[2];
       expect(item.task).toEqual("Remove the lid, turn off the heat, then add the sugar and milk. Whisk for a minute or two, until the pan is deglazed.");
     })
+
+    it('builds preparation Step objects', () => {
+      expect(recipe.prepsteps.length).toEqual(2);
+      let item = recipe.prepsteps[1];
+      console.log(recipe.prepsteps);
+      expect(item.task).toEqual("egg: separate the yolk from the white");
+    });
   })
 })

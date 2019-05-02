@@ -347,6 +347,10 @@ header > nav > ol > li.search button:before {
     columns: 1;
 }
 
+.recipe-panel section.preparation {
+    margin-top: 20px;
+}
+
 .recipe-panel section.steps {
     margin-left: 2em;
     margin-top: 20px;
@@ -370,28 +374,9 @@ header > nav > ol > li.search button:before {
     float: left;
 }
 
-.recipe-panel section.steps > ol > li.prep {
-    counter-reset: recipe-steps-counter;
-    counter-increment: none;
-}
-
-.recipe-panel section.steps > ol > li.prep::before {
-    content: "P. ";
-}
-
-#content .search .recipe-panel section.steps {
-    font-size: 0.8em;
+#content .search .recipe-panel section.preparation {
+    font-size: 0.9em;
     color: #555;
-}
-
-#content .search .recipe-panel section.steps ol {
-    max-height: 4em;
-    overflow: hidden;
-}
-
-#content .search .recipe-panel section.steps::after {
-    content: '…';
-    display: block;
 }
 
 #content .recipe-page {
@@ -404,8 +389,14 @@ header > nav > ol > li.search button:before {
     font-family: sans-serif;
 }
 
+#content .recipe-page h2 {
+    font-weight: bold;
+    margin: 1em 0 0.5em;
+}
+
 #content .recipe-page p.serves,
 #content .recipe-page section {
+    margin-left: 2em;
     margin-top: 1em;
 }
 
@@ -414,8 +405,8 @@ header > nav > ol > li.search button:before {
     left: -9999px;
 }
 
-#content .recipe-page section.ingredients {
-    margin-left: 2em;
+#content .search .recipe-panel section.preparation ol,
+#content .recipe-page section.ingredients ol {
     column-gap: 1em;
     columns: 1;
 }
@@ -424,16 +415,15 @@ header > nav > ol > li.search button:before {
 /* We don't show the h3s (list titles anywhere, but we'll show steps
  * on larger devices.
  */
-#content .search #results-or-examples > ol.results .ingredients > h3,
-#content .search #results-or-examples > ol.results .steps > h3,
-#content .search #results-or-examples > ol.results .steps {
+#content .search #results-or-examples > ol.results section > h3 {
     position: absolute;
     left: -9999px;
 }
 
 @media (min-width: 640px) {
+    #content .search .recipe-panel section.preparation ol,
     #content .search #results-or-examples > ol.results .ingredients,
-    #content .recipe-page section.ingredients {
+    #content .recipe-page section.ingredients ol {
         columns: 2;
     }
 }
@@ -443,22 +433,20 @@ header > nav > ol > li.search button:before {
         position: relative;
         left: 0;
     }
-    #content .search #results-or-examples > ol.results .steps,
-    #content .search #results-or-examples > ol.results .ingredients {
-        margin-left: 2em;
-    }
 }
 
 @media (min-width: 960px) {
+    #content .search .recipe-panel section.preparation ol,
     #content .search #results-or-examples > ol.results .ingredients,
-    #content .recipe-page section.ingredients {
+    #content .recipe-page section.ingredients ol {
         columns: 3;
     }
 }
 
 @media (min-width: 1280px) {
+    #content .search .recipe-panel section.preparation ol,
     #content .search #results-or-examples > ol.results .ingredients,
-    #content .recipe-page section.ingredients {
+    #content .recipe-page section.ingredients ol {
         columns: 4;
     }
 }

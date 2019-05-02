@@ -11,7 +11,8 @@
             "quantity": {
                 "amount": 100,
                 "unit": "g"
-            }
+            },
+            "prep": "rinse the rice until all the water runs clear"
         },
         {
             "name": "water",
@@ -35,8 +36,9 @@
             }
         },
         {
-            "name": "egg yolk",
-            "quantity": 1
+            "name": "egg",
+            "quantity": 1,
+            "prep": "separate the yolk from the white"
         },
         {
             "name": "vanilla extract",
