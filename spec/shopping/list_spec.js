@@ -51,4 +51,29 @@ describe('shopping list', () => {
     let list = new ShoppingList();
     expect(() => list.remove(bacon_hash)).toThrow();
   });
+
+  it('keeps track of what has been bought', () => {
+    let list = new ShoppingList();
+    list.add(bacon_hash);
+    expect(list.slias.size).toEqual(0);
+    list.mark_item_bought(
+      list.groups[0].ingredients[0],
+    );
+    expect(
+      list.groups[0].ingredients[0].bought,
+    ).toBeTruthy()
+    expect(list.slias.size).toEqual(1);
+    expect(list.slias.has('large potato')).toBe(true);
+    let slia = list.slias.get('large potato');
+    expect(slia.parts.length).toEqual(1);
+    expect(slia.parts[0].quantity.amount).toEqual(2);
+    expect(slia.parts[0].quantity.unit).toEqual(undefined);
+    list.mark_item_unbought(
+      list.groups[0].ingredients[0],
+    )
+    expect(
+      list.groups[0].ingredients[0].bought,
+    ).toBeFalsy()
+    expect(list.slias.size).toEqual(0);
+  });
 });
