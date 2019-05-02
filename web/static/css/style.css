@@ -456,7 +456,7 @@ header > nav > ol > li.search button:before {
     }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1280px) {
     #content .search #results-or-examples > ol.results .ingredients,
     #content .recipe-page section.ingredients {
         columns: 4;
