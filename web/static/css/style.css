@@ -326,7 +326,7 @@ header > nav > ol > li.search button:before {
     margin-bottom: 5px;
 }
 
-#content .search #results-or-examples > ol.results .ingredients > ol > li i.quantity {
+.recipe-panel section.ingredients > ol > li i.quantity {
     font-weight: bold;
     color: #333;
 }
@@ -347,22 +347,22 @@ header > nav > ol > li.search button:before {
     columns: 1;
 }
 
-#content .search #results-or-examples > ol.results .steps {
+.recipe-panel section.steps {
     margin-left: 2em;
     margin-top: 20px;
 }
 
-#content .search #results-or-examples > ol.results .steps > ol {
+.recipe-panel section.steps > ol {
     counter-reset: recipe-steps-counter;
 }
 
-#content .search #results-or-examples > ol.results .steps > ol > li {
+.recipe-panel section.steps > ol > li {
     list-style: none;
     counter-increment: recipe-steps-counter;
     margin-bottom: 5px;
 }
 
-#content .search #results-or-examples > ol.results .steps > ol > li::before {
+.recipe-panel section.steps > ol > li::before {
     content: counter(recipe-steps-counter) ".";
     margin-left: -2em;
     width: 1.6em;
@@ -370,12 +370,12 @@ header > nav > ol > li.search button:before {
     float: left;
 }
 
-#content .search #results-or-examples > ol.results .steps > ol > li.prep {
+.recipe-panel section.steps > ol > li.prep {
     counter-reset: recipe-steps-counter;
     counter-increment: none;
 }
 
-#content .search #results-or-examples > ol.results .steps > ol > li.prep::before {
+.recipe-panel section.steps > ol > li.prep::before {
     content: "P. ";
 }
 
