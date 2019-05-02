@@ -1,14 +1,15 @@
-const ShoppingList = require('../../lib/shopping/list');
-let {
-  bacon,
-  potato,
-  chorizo,
-  bread,
-  bacon_hash,
-  gumbo,
-  bacon_sandwich,
-  potato_surprise,
-} = require('./testdata');
+const ShoppingList = require('../../lib/shopping/list'),
+      { Recipe } = require('../../lib/models'),
+      {
+        bacon,
+        potato,
+        chorizo,
+        bread,
+        bacon_hash,
+        gumbo,
+        bacon_sandwich,
+        potato_surprise,
+      } = require('./testdata');
 
 describe('shopping list', () => {
   it('starts with no recipes', () => {
@@ -75,5 +76,27 @@ describe('shopping list', () => {
       list.groups[0].ingredients[0].bought,
     ).toBeFalsy()
     expect(list.slias.size).toEqual(0);
+  });
+
+  it('re-allocates available items after re-collation', () => {
+    /* This relies pretty heavily on the unit tests for
+     * ShoppingListItemAvailable.satisfies working in a wide
+     * range of situations. We're checking here that we
+     * seem to have preserved bought indicators where what
+     * was indicated as to-purchase (ie in the ShoppingList)
+     * would satisfy what we need now.
+     */
+    let list = new ShoppingList();
+    list.add(bacon_hash); // requires 100g bacon
+    list.add(bacon_hash); // twice, so we can remove once
+    // Groups are below the ground, meat
+    list.mark_item_bought(
+      list.groups[1].ingredients[0],
+    ); // so we have 200g
+    list.remove(bacon_hash); // we only need 100g
+    expect(list.groups[1].ingredients[0].bought).toBeTruthy();
+    // Groups are undefined, below the ground, meat
+    list.add(bacon_sandwich); // contains 50g, so we need 150g
+    expect(list.groups[2].ingredients[0].bought).toBeTruthy();
   });
 });
