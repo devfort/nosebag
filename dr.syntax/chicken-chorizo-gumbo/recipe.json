@@ -62,8 +62,7 @@
             "quantity": {
                 "amount": 400,
                 "unit": "g"
-            },
-            "prep": "sliced"
+            }
         },
         {
             "name": "white long grain rice",
@@ -96,13 +95,16 @@
             "task": "Reduce the saucepan to a simmer, and cook for 20 minutes."
         },
         {
-            "task": "Add the okra and return the saucepan to a simmer. Cook for 30 minutes."
+            "task": "During these 20 minutes, prepare the okra. Remove the top and bottom, and slice into 1cm rounds."
         },
         {
-            "task": "White the gumbo is simmering, cook the rice."
+            "task": "After the 20 minutes, add the okra and return the gumbo to a simmer. Cook for a further 30 minutes."
         },
         {
-            "task": "Serve over rice."
+            "task": "During these 30 minutes, cook the rice."
+        },
+        {
+            "task": "Serve the gumbo over the rice."
         }
     ]
 }
