@@ -1,17 +1,22 @@
-const { SyncAdapter } = require('../../lib/storage/sync_adapter'),
+const { SyncAdapter, Error } = require('../../lib/storage/sync_adapter'),
       Storage = require('../fake_storage');
+
+
+function delay(ms, value) {
+  return new Promise((resolve) => setTimeout(() => resolve(value), ms));
+}
 
 
 describe('sync adapter', () => {
   beforeEach(() => {
     this.storage = new Storage();
-    this.remote  = jasmine.createSpyObj('remote', ['read']);
+    this.remote  = jasmine.createSpyObj('remote', ['read', 'add', 'update']);
     this.adapter = new SyncAdapter(this.storage, this.remote);
   })
 
   describe('read_file', () => {
     beforeEach(() => {
-      let response = { data: 'hello world' };
+      let response = { data: 'hello world', meta: { rev: 'v1' } };
       this.remote.read.withArgs('/file').and.returnValue(Promise.resolve(response));
     });
 
@@ -63,7 +68,7 @@ describe('sync adapter', () => {
       beforeEach(async () => {
         await this.adapter.read_file('file');
 
-        let response = { data: 'updated' };
+        let response = { data: 'updated', meta: { rev: 'v2' } };
         this.remote.read.withArgs('/file').and.returnValue(Promise.resolve(response));
       })
 
@@ -76,6 +81,73 @@ describe('sync adapter', () => {
         await this.adapter.read_file('file');
         let response = await this.adapter.read_file('file');
         expect(response).toEqual('updated');
+      })
+    })
+  })
+
+  describe('write_file', () => {
+    describe('with an empty cache and nothing in the remote', () => {
+      beforeEach(() => {
+        let add_response = Promise.resolve({ meta: { rev: 'v1' } });
+        this.remote.add.and.returnValue(add_response);
+      })
+
+      it('adds a new file to the remote', async () => {
+        await this.adapter.write_file('file', 'content');
+        await this.adapter.wait_sync();
+
+        expect(this.remote.add).toHaveBeenCalledTimes(1);
+        expect(this.remote.add).toHaveBeenCalledWith('/file', 'content');
+
+        expect(this.remote.update).not.toHaveBeenCalled();
+      })
+    })
+
+    describe('with an empty cache and a file in the remote', () => {
+      beforeEach(() => {
+        let add_response = Promise.reject(new Error('conflict'));
+        this.remote.add.and.returnValue(add_response);
+
+        let read_response = Promise.resolve({ data: 'old content', meta: { rev: 'v2' } });
+        this.remote.read.and.returnValue(read_response);
+
+        let update_response = Promise.resolve({ meta: { rev: 'v3' } });
+        this.remote.update.and.returnValue(update_response);
+      })
+
+      it('updates the file in the remote', async () => {
+        await this.adapter.write_file('file', 'new content');
+        await this.adapter.wait_sync();
+
+        expect(this.remote.add).toHaveBeenCalledTimes(1);
+        expect(this.remote.add).toHaveBeenCalledWith('/file', 'new content');
+
+        expect(this.remote.update).toHaveBeenCalledTimes(1);
+        expect(this.remote.update).toHaveBeenCalledWith('/file', 'new content', 'v2');
+      })
+    })
+
+    describe('when a write occurs while syncing', () => {
+      beforeEach(() => {
+        let add_response = delay(100, { meta: { rev: 'v1' } });
+        this.remote.add.and.returnValue(add_response);
+
+        let update_response = Promise.resolve({ meta: { rev: 'v2' } });
+        this.remote.update.and.returnValue(update_response);
+      })
+
+      it('completely updates the file in the remote', async () => {
+        await this.adapter.write_file('file', 'content');
+        await delay(50);
+        await this.adapter.write_file('file', 'updated');
+
+        await this.adapter.wait_sync();
+
+        expect(this.remote.add).toHaveBeenCalledTimes(1);
+        expect(this.remote.add).toHaveBeenCalledWith('/file', 'content');
+
+        expect(this.remote.update).toHaveBeenCalledTimes(1);
+        expect(this.remote.update).toHaveBeenCalledWith('/file', 'updated', 'v1');
       })
     })
   })

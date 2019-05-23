@@ -4,7 +4,7 @@ class Storage {
   }
 
   getItem(name) {
-    return this._items.get(name);
+    return this._items.get(name) || null;
   }
 
   setItem(name, value) {
