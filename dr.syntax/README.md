@@ -87,6 +87,13 @@ absolute URL if the media files are stored elsewhere such as on Wikipedia.)
       "gluten free",
       ...
   ],
+  "description": [
+      {
+          "type": "text/markdown",
+          "content": "This is *my* recipe for mashed potatoes.\n"
+      },
+      ...
+  ]
   "ingredients": [
       {
           "name": "large potato",
@@ -115,7 +122,16 @@ The **recipe object** contains:
 * `attributes` — _optional_, an array of strings which represent aspects of
   this recipe (such as "gluten free") which can be used for searching and
   filtering
+* `description` — _optional_, an array of objects representing a narrative
+  description of the recipe which contain:
 
+  * `type` — _required_, a string representing the
+    [media type](https://en.wikipedia.org/wiki/Media_type) of the
+    description (eg "text/plain", "text/html")
+  * `content` — _required_, the description, formatted as _type_
+
+  If there is only one description object and it is plain text, the object
+  can be collapsed to a string.
 
 The **ingredient object** contains:
 
